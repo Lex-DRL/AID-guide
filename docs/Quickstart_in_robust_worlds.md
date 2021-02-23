@@ -131,7 +131,9 @@ Note that all of them are in `UPPERCASE`. That's not by accident. It's still a m
 > APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair, brown eyes.
 </details>
 
-Also note: the above axample shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
+Note: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
+
+Also note: the dash (`-`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). So for some sub-categories it's better to use names like `hair-color` instead of `hair color` or just `color`.
 
 #### Don't use emojis and special characters
 Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter than a regular word.
@@ -141,4 +143,43 @@ This is a good thing, and the WI formattings utilize that. But unless you're usi
 
 Non-ASCII unicode characters like `ù` should be avoided in any case.
 
+## Next step: World Info formats
+Now we're stepping into somewhat hacky area.
+
+As stated above (and you might already know), modern AI learns from the experience. So there inevitably will be some patterns that the AI recognizes better. That's the whole idea of so-called **WI formatting/formats**. You can't program AID directly to built the world you want, but you can format your WI entries in a specific (somewhat program-alike) style, which AI would understand much, much better. So therefore it would generate a mich more meaningful output.
+
+That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into to WI entries, and AID can automagically understand it. But you should describe your world in a more machine-readable format. The AI won't generate a machine-like text if you do so, quite the opposite: since it understands the world better, it produces better results. So, if you want it's output to "translate to human language" better, you should translate your input (WI, not the actual game input) to "machine-friendly language" first.
+
+That's where the main WI formats emerged from. They're called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, Zaltys 🐍#5362, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
+
+### A couple of notes relevant for all formats
+* All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](/AID%20WI%20Research%20Sheet.md#categories-table).
+* Also, as stated above, sub-category name like `hair-color` is better than `hair color`.
+* Grouping with `<>` [is better](/AID%20WI%20Research%20Sheet.md#birb-research) than `()`.
+
+### Author's note
+The A/N feature is a premium one, it's intended to enforce the overall narration to have a specific style or go a certain way. But the community research has shown that it can be used even in free accounts since it's no different from simply appending a formatted message like this to every third input:
+
+`[Author's note: This novel is esoteric and descriptive. Author: Terry Pratchett. Writing style:  Metafiction, in the style of Deadpool. Genre: Witty, talkative.]`
+
+`[Author's note: We now switch focus on Mary.]`
+
+Or even a shortened one, saving on characters:
+
+`A/N: [{"writing style":["descriptive", "elegant", "gritty"], "wording":["archaic", "Cockney accent"], "current state":"indoors"}]`
+
+Read more details about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
+
+### The best format atm
+The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by birb, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
+
+Some of the statements in that guide contradict each other, so I'm not sure if I got it right, but Zaltys format seems to be the most accepted one. JSON is discouraged (though it's stated otherwise in it's own section) due to the amount of boilerplate code it requires. Monky's formats are considered more forgiving ones, so it might be a good start point for non-native speakers.
+
+Whichever you choose, it's recommended to stick to it in all your world entries and don't mix them.
+
+It's easier to learn from an example, so let's just look into the same entry written in all of those:
+
+### Format examples
+
 ## Credits and links
+TODO
