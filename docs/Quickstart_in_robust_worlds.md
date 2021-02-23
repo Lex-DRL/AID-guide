@@ -20,7 +20,7 @@
 If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, 3 inputs above, how could you possibly forget it already! You must've faced a similar situation more than once.
 
 <details>
-  <summary>Why AID's NNs suck and what we can do about it</summary>
+<summary>Why AID's NNs suck and what we can do about it</summary>
   
 > Even though AI dungeon might seem a neural-network (NN) auto-magical "next generation of software", it's still just a software. So it has it's limitations. One of the core ones is memory limit. We'll discuss the specifics further, but in short, if you think of AI as of a real person, it would be a really, really dumb one. Set aside, that comparing AI NNs with a real brain is incorrect in general, the current state of technology is only capable of building NNs that can barely compete with an intellect of really primitive lifeforms, like bees or worms, and it can do it only on a very powerful computers. We're nowhere near human level of intellect yet. Well, maybe, if we combine **ALL** of the existing computing power on Earth (including every smart TV or smart watch) to a massive cloud server, it can be comparable to a single human brain, but that's it. And that brain won't be an Einstein one.
 >
@@ -40,7 +40,7 @@ So first things first, there are two aspects the AI struggle with:
 1. Vague/unclear WI entries;
 2. Too long, non-informative WI entries.
 
-The first might be not as obvious as you think. For instance, the canonical `has`/`is` difference mentioned in official AID FAQ: you can say that a `character has green eyes` or that the `character's eyes are green`. It seems the same to you, but for the AI, the former would be much harder to understand (the connection is weaker) than the latter. More on that below, here it's just as an example.
+The first might be not as obvious as you think. For instance, the well-known `has`/`is` difference: you can say that a `character has green eyes` or that the `character's eyes are green`. It seems the same to you, but for the AI, the former would be much harder to understand (the connection is weaker) than the latter. More on that below, here it's just as an example.
 
 And let's talk about the the second problem, being informative...
 
@@ -48,7 +48,7 @@ And let's talk about the the second problem, being informative...
 
 To correctly understand what statement is informative **for the AI**, we need to discuss how the AI represents your input in general. Again, I try to stay away from specifics for programmers, but we need to grasp at least the concept.
 
-AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `appearance` is represented by 3 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
+AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 3 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
 
 Here's an example of few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
 ![CATEGORY tokens](/imgs/cat-tokens.png "CATEGORY tokens")
@@ -60,7 +60,75 @@ Another important thing about AI memory is it's size. With each input you give, 
 * We want to use those chars as effectively as possible, trying not to waste any of them.
 
 ## First steps: optimising just a plain english
+Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.
 
+#### Mention the subject in entry
+When you mention a thing in `Keys` section, also mention it in the `Entry` itself. From now on, I'm gonna give examples in Mass Effect universe *(since that's the scenario I want to make and the one I've learned the subject for)*.
+<details>
+<summary>Example</summary>
+  
+❌ Bad:
+> `Keys`: citadel
+>
+> `Entry`: A colossal deep-space station that serves as the capital...
 
+✔ Good:                                                                                                                                          
+> `Keys`: citadel
+>
+> `Entry`: ***Citadel*** is a colossal deep-space station that serves as the capital...
+</details>
+
+#### Use `is` instead of `has`
+As stated above, `has` is much weaker than `is`. To a degree that the AI can loose the connection entirely. Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
+<details>
+<summary>Example</summary>
+  
+❌ Bad:
+> `Entry`: Shepard has a deep low voice...
+
+✔ Good:                                                                                                                                          
+> `Entry`: Shepard's voice is deep and low...
+</details>
+
+#### Avoid negatives
+I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywords) here in a direct quote:
+> AID has been known to be notoriously bad at negatives. For example the community has known for a long time that `White hates apples` is a better alternative to `White dislikes apples` as the AI doesn't seem to respect the intent of the latter statement at all.
+>
+> Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
+
+#### Avoid using words with broad meaning
+As a non-native english speaker, I have a small vocabulary myself. But whenever you can, put the words that carry as many sense as possible, but that sense shouldn't be broad. Ideally, your text should look like hokku, where each word carries a whole ocean of info. Remember those ridiculously clickbait titles yellow journalism likes to use? Like that.
+
+A list of words proven to be descriptive is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted above.
+
+<details>
+<summary>Example</summary>
+  
+❌ Bad:
+> Ironically, `bad` itself 😄
+>
+> Also, `evil`, `mad`.
+
+✔ Good:
+> `cruel`, `sadistic`, `lunatic`.
+</details>
+
+#### Use known categories
+Even if you won't go any further to specific formatting styles, you can (and should) utilise the keywords proven to give good results.
+The list is really long and it's get updated so I won't duplicate the info here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
+
+Some of the most noteable are: `SUMMARY`, `MIND`, `APPEAR`, `WORN`, `DESC`, `LIMIT/LACK`. You can read about them at the link above.
+Note that all of them are in `UPPERCASE`. That's not by accident. It's still a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences at the link above. But if you just want for the "recommended" approach for beginners, it's definitely `UPPERCASE`.
+<details>
+<summary>Example</summary>
+  
+(assimung you still use a raw prose and not a specific WI format)
+
+> `Entry`:
+>
+> Shepard:<br>
+> SUMMARY: human male, 30y, military, Alliance forces, first human Spectre.<br>
+> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair, brown eyes.
+</details>
 
 ## Credits and links
