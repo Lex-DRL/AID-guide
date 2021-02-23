@@ -118,11 +118,11 @@ Even if you won't go any further to specific formatting styles, you can (and sho
 The list is really long and it's get updated so I won't duplicate the info here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
 
 Some of the most noteable are: `SUMMARY`, `MIND`, `APPEAR`, `WORN`, `DESC`, `LIMIT/LACK`. You can read about them at the link above.
-Note that all of them are in `UPPERCASE`. That's not by accident. It's still a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences at the link above. But if you just want for the "recommended" approach for beginners, it's definitely `UPPERCASE`.
+Note that all of them are in `UPPERCASE`. That's not by accident. It's still a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences at the link above. But if you just want the "recommended" approach for beginners, it's definitely `UPPERCASE`.
 <details>
 <summary>Example</summary>
   
-(assimung you still use a raw prose and not a specific WI format)
+(assuming you still use a raw prose and not a specific WI format)
 
 > `Entry`:
 >
@@ -130,5 +130,15 @@ Note that all of them are in `UPPERCASE`. That's not by accident. It's still a m
 > SUMMARY: human male, 30y, military, Alliance forces, first human Spectre.<br>
 > APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair, brown eyes.
 </details>
+
+Also note: the above axample shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
+
+#### Don't use emojis and special characters
+Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter than a regular word.
+Special characters like `<>`, `[]`, `{}` and other symbols used in programming are treated... well, like in programming. The AI is trained on an immense dataset gathered by scraping internet, so it learned the meaning for those chars from where it've seen them the most: in the source code.
+
+This is a good thing, and the WI formattings utilize that. But unless you're using one of them or testing your own format, you should avoid them in general.
+
+Non-ASCII unicode characters like `ù` should be avoided in any case.
 
 ## Credits and links
