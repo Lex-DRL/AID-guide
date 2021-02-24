@@ -3,9 +3,9 @@
 #### Disclaimer
 > This doc is just a compilation of the info already available on the subject atm of writing. See the [Credits](#credits-and-links) section for details.
 >
-> I am not a native english speaker, so I'm apologizing for my grammar upfront.
+> I am not a native english speaker, so I'm apologizing for my grammar/spelling upfront.
 >
-> I did my best to make this guide as short and yet as informative as possible, but I did it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of flood here and there. Although, I believe it points you to the right direction in general.
+> I did my best to make this guide as short and yet as structured and informative as possible, but I did it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of flood here and there. Although, I believe it points you to the right direction in general.
 >
 > Fell free to commit/pull request any corrections you see fit.
 >
@@ -97,7 +97,12 @@ I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywor
 > Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
 
 #### Avoid using words with broad meaning
-As a non-native english speaker, I have a small vocabulary myself. But whenever you can, put the words that carry as many sense as possible, but that sense shouldn't be broad. Ideally, your text should look like hokku, where each word carries a whole ocean of info. Remember those ridiculously clickbait titles yellow journalism likes to use? Like that.
+As a non-native english speaker, I have a small vocabulary myself. But whenever you can, put the words that carry as many sense as possible, but that sense shouldn't be broad. Ideally, your text should look like hokku, where each word carries a whole ocean of info. Remember those ridiculously clickbaity screaming tabloid headlines that yellow journalism likes to use? Like that. Each word there carries a whole image. Check yourself:
+```
+Titanic Survivors Found Onboard
+Vampires Attack US Troops
+Alien Bible Found, They Worship Oprah
+```
 
 A list of words proven to be descriptive is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted above.
 
