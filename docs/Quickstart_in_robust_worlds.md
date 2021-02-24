@@ -1,4 +1,5 @@
-# Quick start in robust worlds building in AI Dungeon
+# Building better worlds <sub>*in AI Dungeon*</sub>
+An introductory guide for game masters / somewhat experienced players who want to enhance `AI Dungeon`'s output and make it generate a more believable story, with a detailed/developed world.
 
 #### Disclaimer
 > This doc is just a compilation of the info already available on the subject atm of writing. See the [Credits](#credits-and-links) section for details.
