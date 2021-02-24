@@ -51,7 +51,11 @@ To correctly understand what statement is informative **for the AI**, we need to
 AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 3 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
 
 Here's an example of few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
+<details>
+<summary>Screenshot</summary>
+  
 ![CATEGORY tokens](/imgs/cat-tokens.png "CATEGORY tokens")
+</details>
 
 So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english which, when represented by tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
 
@@ -133,7 +137,7 @@ Note that all of them are in `UPPERCASE`. That's not by accident. It's still a m
 >
 > Shepard:<br>
 > SUMMARY: human male, 30y, military, Alliance forces, first human Spectre.<br>
-> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair, brown eyes.
+> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair-color, brown eyes-color.
 </details>
 
 Note: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
@@ -153,38 +157,90 @@ Now we're stepping into somewhat hacky area.
 
 As stated above (and you might already know), modern AI learns from the experience. So there inevitably will be some patterns that the AI recognizes better. That's the whole idea of so-called **WI formatting/formats**. You can't program AID directly to built the world you want, but you can format your WI entries in a specific (somewhat program-alike) style, which AI would understand much, much better. So therefore it would generate a mich more meaningful output.
 
-That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into to WI entries, and AID can automagically understand it. But you should describe your world in a more machine-readable format. The AI won't generate a machine-like text if you do so, quite the opposite: since it understands the world better, it produces better results. So, if you want it's output to "translate to human language" better, you should translate your input (WI, not the actual game input) to "machine-friendly language" first.
+That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into WI entries, and AID can automagically understand it. But you should describe your world in a more machine-readable format. The AI won't generate a machine-like text if you do so, quite the opposite: since it understands the world better, it produces more believable results. So, if you want it's output to "translate to human language" better, you should translate your input (WI, not the actual game input) to "machine-friendly language" first.
 
-That's where the main WI formats emerged from. They're called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, Zaltys 🐍#5362, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
+That's where the main WI formats emerged from. The few most used ones are called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, Zaltys 🐍#5362, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
 
 ### A couple of notes relevant for all formats
 * All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](/AID%20WI%20Research%20Sheet.md#categories-table).
 * Also, as stated above, sub-category name like `hair-color` is better than `hair color`.
 * Grouping with `<>` [is better](/AID%20WI%20Research%20Sheet.md#birb-research) than `()`.
+* New line is a very strong (good) way to separate groups/traits. Though, each new line takes 2 characters.
 
 ### Author's note
-The A/N feature is a premium one, it's intended to enforce the overall narration to have a specific style or go a certain way. But the community research has shown that it can be used even in free accounts since it's no different from simply appending a formatted message like this to every third input:
+The A/N feature is a premium one, it's intended to enforce "meta": to make the overall narration to have a specific style or go a certain way. But the community research has shown that it can be used even in free accounts since it's no different from simply appending a formatted message like this to every third input:
 
 `[Author's note: This novel is esoteric and descriptive. Author: Terry Pratchett. Writing style:  Metafiction, in the style of Deadpool. Genre: Witty, talkative.]`
 
 `[Author's note: We now switch focus on Mary.]`
 
-Or even a shortened one, saving on characters:
+Or even a shortened one, saving on characters (also utilizes JSON formatting):
 
 `A/N: [{"writing style":["descriptive", "elegant", "gritty"], "wording":["archaic", "Cockney accent"], "current state":"indoors"}]`
+
+Doing so manually would be tedious, but with addition of scripts feature (which became available for free, too) it can be automated.
 
 Read more details about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
 
 ### The best format atm
 The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by birb, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
 
-Some of the statements in that guide contradict each other, so I'm not sure if I got it right, but Zaltys format seems to be the most accepted one. JSON is discouraged (though it's stated otherwise in it's own section) due to the amount of boilerplate code it requires. Monky's formats are considered more forgiving ones, so it might be a good start point for non-native speakers.
+Some of the statements in that guide contradict each other, so some info must be outdated. What I got told in the AID discord is:
+* `JSON` is discouraged because of how wasteful it is, requiring too much boilerplate code.
+* All Monky's formats are the most efficient ones in term of character/token saving. They're also simpler, easier to use, more readable and more forgiving to bad wording. So `Futureman` (the latest of Monky's) might be a good starting point for non-native speakers or for use with scripts like `EWIJSON` (see the next section).
+* `Zaltys`' format seems to be the most efficient one that also supports categories. And having those is a big deal.
 
-Whichever you choose, it's recommended to stick to it in all your world entries and don't mix them.
+Whichever you choose, it's confirmed by the community members (Zaltys 🐍#5362 and Mr.Accountant 🐧#3984) that you can freely combine any styles you like in a single WI and even in a single entry, as long as you use each format on a separate line.
 
-It's easier to learn from an example, so let's just look into the same entry written in all of those:
+It's easier to learn from an example, so let's just look into the same John Shepard entry I've shown above, but written in each of those formats:
 
 ### Format examples
+
+#### JSON
+<details>
+<summary>Example</summary>
+  
+> `Entry`:
+>
+> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye-color": "brown"}, "hair": {"hair-color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall-189cm", "weight": "average-102.5kg"}}}}]`
+</details>
+
+<details>
+<summary>Human-readable example</summary>
+
+Since we're trying to save every last character, you shouldn't put the text like this right into the WI. It's here just to show the format itself. It's the same example, just padded with tabs for better illustration. For the actual WI entry, all the extra tabs/spaces/new lines need to be removed.
+
+> `Entry`:
+>
+> ```json
+> [{
+> 	"Shepard": {
+> 		"name": ["Shepard", "John", "John Shepard"], 
+> 		"age": "30y", 
+> 		"gender": "male", 
+> 		"species": ["human", "man"], 
+> 		"APPEAR": {
+> 			"eyes": {
+> 				"eye-color": "brown"
+> 			},
+> 			"hair": {
+> 				"hair-color": "dark brown", 
+> 				"hair-length": ["short", "shaved"], 
+> 				"hair-style": "military haircut"
+> 			},
+> 			"body": {
+> 				"physique": ["muscular", "hunk"], 
+> 				"height": "tall-189cm", 
+> 				"weight": "average-102.5kg"
+> 			}
+> 		}
+> 	}
+> }]
+> ```
+</details>
+
+Nothing to say here, it's basically JSON format as is. It's not recommended to use in WI anyway (see how much chars we waste on all those commas, extra spaces and quotes). It was tested as one of the first ones, and is here just for history... and to show what direction we're going for our entries. It's basically a pile of character keywords, hierarchically grouped into categories.
+I'm not going to explain it's syntex: if you understand it, you don't need it, and if you don't — then let's just go next.
 
 ## Credits and links
 TODO
