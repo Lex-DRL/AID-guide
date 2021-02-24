@@ -244,4 +244,8 @@ Nothing to say here, it's basically JSON format as is. It's not recommended to u
 I'm not going to explain it's syntex: if you understand it, you don't need it, and if you don't — then let's just go next.
 
 ## Credits and links
-TODO
+TODO:
+`you` keyword
+triang brackets:
+* 3 meanings
+* it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
