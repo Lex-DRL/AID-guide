@@ -24,8 +24,19 @@ This doc is just a compilation of the info already available on the subject atm 
 - [First steps: optimising just a plain english](#first-steps-optimising-just-a-plain-english)
 </details>
 
+### List of used terms
+> The `AI Dungeon` (AID) community uses quite a lot of special terms and abbreviations. No need to learn them right now, I'll explain them as I introduce them on the way. But if for some reason you skipped it, you can revisit this section.
+<details>
+<summary>Terms and abbreviations</summary>
+  
+- AID - AI Dungeon
+- ML - machine learning
+- NN - neural network
+- WI - World Info
+</details>
+
 ## Introduction
-If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, 3 inputs above, how could you possibly forget it already! You must've faced a similar situation more than once.
+If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, 3 inputs above, how could it possibly forget it already! You must've faced a similar situation more than once.
 
 <details>
 <summary>Why AID's NNs suck and what we can do about it</summary>
