@@ -45,10 +45,12 @@ If you've got here, I believe you've already played [AI Dungeon (AID)](https://p
 >
 > So AI Dungeon's NN models (Griffin and Dragon) are (and inevitably will be in any foreseeable future) incapable of truly mimicking a living narrator / game master, that can understand any of your requests and always produce something meaningful.
 >
-> With that important thing said, I've got good news for you. You still can drastically improve the AI output by simply building your WI "the right way". According to tests/evidences, provided by the AID community, a "properly" made WI does make night and day difference, producing more consistent output, making the AI forget less and generating more relevant output in general. How do you accomplish this?
+> With that important thing said, I've got good news for you. You still can drastically improve the AI output by simply building your WI "the right way". According to tests/evidences, provided by the AID community, a "properly" made WI does make night and day difference, making the AI forget less, producing more consistent and overall more relevant output in general.
+>
+> How do you accomplish this?
 </details>
 
-Well, you need to stop thinking about the AI as of "really dumb person" and start thinking of it as of what it actually is: a really smart software.
+Well, you need to stop thinking about the AI as of a "really dumb person" and start thinking of it as of what it actually is: a really smart software.
 
 
 ### But I'm not a programmer!
@@ -65,9 +67,9 @@ And let's talk about the the second problem, being informative...
 
 ### How AI remembers your WI
 
-To correctly understand what statement is informative **for the AI**, we need to discuss how the AI represents your input in general. Again, I try to stay away from specifics for programmers, but we need to grasp at least the concept.
+To correctly understand what statement is informative **for the AI** (not for human), we need to discuss how it represents your input in general. Again, I try to stay away from specifics for programmers, but we need to grasp at least the concept.
 
-AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 3 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
+AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
 
 Here's an example of few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
 <details>
