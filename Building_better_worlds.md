@@ -132,7 +132,7 @@ When you mention a thing in `Keys` section, also mention it in the `Entry` itsel
 </details>
 
 #### Use `is` instead of `has`
-As [stated above](#but-im-not-a-programmer), `has` is much weaker than `is`. To a degree that the AI can loose the connection entirely. Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
+As [stated above](#but-im-not-a-programmer), `has` is much weaker than `is`. To a degree that the AI [can loose the connection entirely](https://wiki.aidiscord.cc/wiki/World_Info#Entries). Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
 <details>
 <summary>Example</summary>
   
@@ -180,7 +180,7 @@ Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it'
 <details>
 <summary>Example</summary>
   
-(assuming you still use a raw prose and not a specific WI format)
+(assuming you still use a somewhat-like raw prose and not a specific WI format)
 
 > `Entry`:
 >
@@ -295,7 +295,7 @@ Since we're trying to save every last character, you shouldn't put the text like
 </details>
 
 Nothing to say here, it's basically JSON format as is. It's not recommended to use in WI anyway (see how much chars we waste on all those commas, extra spaces and quotes). It was tested as one of the first ones, and is here just for history... and to show what direction we're going for our entries. It's basically a pile of character keywords, hierarchically grouped into categories.
-I'm not going to explain it's syntex: if you understand it, you don't need it, and if you don't — then let's just go next.
+I'm not going to explain it's syntax: if you understand it, you don't need it, and if you don't — then let's just go next.
 
 ## Last step: Scripts
 
