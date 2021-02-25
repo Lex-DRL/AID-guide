@@ -1,4 +1,4 @@
-# Building better worlds <sub>*in AI Dungeon*</sub>
+# Building better worlds <sub>*(in AI Dungeon)*</sub>
 An introductory guide for game masters / somewhat experienced players who want to enhance `AI Dungeon`'s output and make it generate a more believable story, with a detailed/developed world.
 
 #### Disclaimer
