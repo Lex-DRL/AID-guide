@@ -32,6 +32,7 @@ This doc is just a compilation of the info already available on the subject atm 
 - AID - AI Dungeon
 - ML - machine learning
 - NN - neural network
+- [token](#how-ai-remembers-your-wi) - a combination of a few characters that the AI splits all your input into. E.g., tokens for `APPEARANCE` are: `AP`, `PE`, `AR`, `ANCE`.
 - WI - World Info
 </details>
 
@@ -78,11 +79,12 @@ Here's an example of few common words [tested for tokens by the community](/AID%
 ![CATEGORY tokens](/imgs/cat-tokens.png "CATEGORY tokens")
 </details>
 
-So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english which, when represented by tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
+So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english, which, when represented by tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
 
-Another important thing about AI memory is it's size. With each input you give, only about 2.8k charcters are fed to the NN. It's not so much even on it's own, but it's even less considering that this limit is shared between your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, the history of previous text. The specifics on how this memory shared can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark two things:
-* The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but can be used on free account with scripts) + your `Input` + most recent part of story = 2772 chars. 
-* We want to use those chars as effectively as possible, trying not to waste any of them.
+Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory shared between different parts can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three things:
+* The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but [can be used on free account with scripts](#authors-note)) + your `Input` + most recent part of story = 2772 chars. 
+* We want to use those chars as effectively as possible, trying not to waste any of them...
+* ... but at the same time feeding as much **relevant** data as we can at each input.
 
 ## First steps: optimising just a plain english
 Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.
