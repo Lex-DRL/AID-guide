@@ -22,6 +22,17 @@ This doc is just a compilation of the info already available on the subject atm 
   * [But I'm not a programmer!](#but-im-not-a-programmer)
   * [How AI remembers your WI](#how-ai-remembers-your-wi)
 - [First steps: optimising just a plain english](#first-steps-optimising-just-a-plain-english)
+  * [Mention the subject in entry](#mention-the-subject-in-entry)
+  * [Use `is` instead of `has`](#use-is-instead-of-has)
+  * [Avoid negatives](#avoid-negatives)
+  * [Avoid using words with broad meaning](#avoid-using-words-with-broad-meaning)
+  * [Use known categories](#use-known-categories)
+  * [Don't use emojis and special characters](#dont-use-emojis-and-special-characters)
+- [Next step: World Info formats](#next-step-world-info-formats)
+  * [A couple of notes relevant for all formats](#a-couple-of-notes-relevant-for-all-formats)
+  * [Author's note](#authors-note)
+  * [The best format atm](#the-best-format-atm)
+  * [Format examples](#format-examples)
 </details>
 
 ### List of used terms
