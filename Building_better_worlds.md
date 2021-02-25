@@ -1,21 +1,28 @@
 # Building better worlds <sub>*(in AI Dungeon)*</sub>
 An introductory guide for game masters / somewhat experienced players who want to enhance `AI Dungeon`'s output and make it generate a more believable story, with a detailed/developed world.
 
-#### Disclaimer
-> This doc is just a compilation of the info already available on the subject atm of writing. See the [Credits](#credits-and-links) section for details.
->
+This doc is just a compilation of the info already available on the subject atm of writing. See the [Credits](#credits-and-links) section for details.
+
+<details>
+<summary>Disclaimer</summary>
+  
 > I am not a native english speaker, so I'm apologizing for my grammar/spelling upfront.
 >
-> I did my best to make this guide as short and yet as structured and informative as possible, but I did it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of flood here and there. Although, I believe it points you to the right direction in general.
+> I did my best to make this guide as short and yet as structured and informative as possible, but I was making it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of specifics here and there. Although, I believe it points you to the right direction in general.
 >
-> Fell free to commit/pull request any corrections you see fit.
+> Feel free to commit/pull request any corrections you see fit.
 >
 > — [Lex (DRL) Darlog](https://github.com/Lex-DRL)
+</details>
+
+<details>
+<summary><b>Table of contents</b></summary>
 
 - [Introduction](#introduction)
   * [But I'm not a programmer!](#but-im-not-a-programmer)
   * [How AI remembers your WI](#how-ai-remembers-your-wi)
 - [First steps: optimising just a plain english](#first-steps-optimising-just-a-plain-english)
+</details>
 
 ## Introduction
 If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, 3 inputs above, how could you possibly forget it already! You must've faced a similar situation more than once.
