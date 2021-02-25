@@ -33,6 +33,7 @@ This doc is just a compilation of the info already available on the subject atm 
   * [Author's note](#authors-note)
   * [The best format atm](#the-best-format-atm)
   * [Format examples](#format-examples)
+ - [Last step: Scripts](#last-step-scripts)
 </details>
 
 #### Who's the guide for
@@ -295,6 +296,8 @@ Since we're trying to save every last character, you shouldn't put the text like
 
 Nothing to say here, it's basically JSON format as is. It's not recommended to use in WI anyway (see how much chars we waste on all those commas, extra spaces and quotes). It was tested as one of the first ones, and is here just for history... and to show what direction we're going for our entries. It's basically a pile of character keywords, hierarchically grouped into categories.
 I'm not going to explain it's syntex: if you understand it, you don't need it, and if you don't — then let's just go next.
+
+## Last step: Scripts
 
 ## Credits and links
 TODO:
