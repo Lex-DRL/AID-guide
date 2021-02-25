@@ -52,6 +52,7 @@ Each section is self-sufficient on it's own, so you can stop whenever you feel f
 <summary>Terms and abbreviations</summary>
   
 - AID - AI Dungeon
+- A/N - [Author's note](#authors-note), a premium feature.
 - ML - machine learning
 - NN - neural network
 - [token](#how-ai-remembers-your-wi) - a combination of a few characters that the AI splits all your input into. E.g., tokens for `APPEARANCE` are: `AP`, `PE`, `AR`, `ANCE`.
@@ -205,9 +206,9 @@ And that would be a good place to discuss those.
 ## Next step: World Info formats
 Now we're stepping into somewhat hacky area.
 
-As stated above (and you might already know), modern AI learns from the experience. So there inevitably will be some patterns that the AI recognizes better. That's the whole idea of so-called **WI formatting/formats**. You can't program AID directly to built the world you want, but you can format your WI entries in a specific (somewhat program-alike) style, which AI would understand much, much better. So therefore it would generate a mich more meaningful output.
+As stated above (and you might already know), modern AI learns from it's experience. So inevitably, there will be some patterns that the AI have seen more and therefore recognizes them better. That's the whole idea of so-called **WI formatting/formats**. You can't program AID directly to build the world you want, but you can format your WI entries in a specific (somewhat program-alike) style, which AI would understand much, much better. So therefore it would generate a mich more meaningful output.
 
-That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into WI entries, and AID can automagically understand it. But you should describe your world in a more machine-readable format. The AI won't generate a machine-like text if you do so, quite the opposite: since it understands the world better, it produces more believable results. So, if you want it's output to "translate to human language" better, you should translate your input (WI, not the actual game input) to "machine-friendly language" first.
+That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's a much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into WI entries, and AID will automagically understand it. But you **shouldn't** do it this way. Instead, you should describe your world in a more machine-readable format. Don't worry, you won't cause the AI to generate a machine-like text by doing so, quite the opposite: since it understands the world better, it produces more believable results. So, yes, counterintuitively, to make the output more reasonable for a human, you should describe WI in a more cryptic way.
 
 That's where the main WI formats emerged from. The few most used ones are called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, Zaltys 🐍#5362, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
 
@@ -235,7 +236,7 @@ Read more details about it here: [Authors Notes specifics](/AID%20WI%20Research%
 ### The best format atm
 The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by birb, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
 
-Some of the statements in that guide contradict each other, so some info must be outdated. What I got told in the AID discord is:
+Some of the statements in that guide contradict each other, so some info must be outdated. What I got told in the AID discord server is:
 * `JSON` is discouraged because of how wasteful it is, requiring too much boilerplate code.
 * All Monky's formats are the most efficient ones in term of character/token saving. They're also simpler, easier to use, more readable and more forgiving to bad wording. So `Futureman` (the latest of Monky's) might be a good starting point for non-native speakers or for use with scripts like `EWIJSON` (see the next section).
 * `Zaltys`' format seems to be the most efficient one that also supports categories. And having those is a big deal.
