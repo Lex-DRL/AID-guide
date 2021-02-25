@@ -183,14 +183,15 @@ Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it'
 >
 > Shepard:<br>
 > SUMMARY: human male, 30y, military, Alliance forces, first human Spectre.<br>
-> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair-color, brown eyes-color.
+> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair_color, brown eyes_color.
 </details>
 
 Note #1: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
 
 Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
 
-Note #3: the dash (`-`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) then a space. So for some sub-categories it's better to use names like `hair-color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.
+Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) then a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.<br>
+Earlier, a dash (`-`) char did the same thing, but currently it's treated more like a mathematical minus, so if you see a recipe using dash to connect words, replace it with underscore instead. 
 
 #### Don't use emojis and special characters
 Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter and carries more meaning than a regular word.
@@ -214,7 +215,7 @@ That's where the main WI formats emerged from. The few most used ones are called
 
 ### A couple of notes relevant for all formats
 * All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](/AID%20WI%20Research%20Sheet.md#categories-table).
-* Also, as stated above, sub-category name like `hair-color` is better than `hair color`.
+* Also, as stated above, sub-category name like `hair_color` is better than `hair color`.
 * Grouping with `<>` [is better](/AID%20WI%20Research%20Sheet.md#birb-research) than `()`.
 * New line is a very strong (good) way to separate groups/traits. Though, each new line takes 2 characters.
 
@@ -253,7 +254,7 @@ It's easier to learn from an example, so let's just look into the same John Shep
   
 > `Entry`:
 >
-> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye-color": "brown"}, "hair": {"hair-color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall-189cm", "weight": "average-102.5kg"}}}}]`
+> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye_color": "brown"}, "hair": {"hair_color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall-189cm", "weight": "average-102.5kg"}}}}]`
 </details>
 
 <details>
@@ -272,12 +273,12 @@ Since we're trying to save every last character, you shouldn't put the text like
 > 		"species": ["human", "man"], 
 > 		"APPEAR": {
 > 			"eyes": {
-> 				"eye-color": "brown"
+> 				"eye_color": "brown"
 > 			},
 > 			"hair": {
-> 				"hair-color": "dark brown", 
-> 				"hair-length": ["short", "shaved"], 
-> 				"hair-style": "military haircut"
+> 				"hair_color": "dark brown", 
+> 				"hair_length": ["short", "shaved"], 
+> 				"hair_style": "military haircut"
 > 			},
 > 			"body": {
 > 				"physique": ["muscular", "hunk"], 
