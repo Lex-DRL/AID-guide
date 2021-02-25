@@ -6,7 +6,7 @@ This doc is just a compilation of the info already available on the subject atm 
 <details>
 <summary>Disclaimer</summary>
   
-> I am not a native english speaker, so I'm apologizing for my grammar/spelling upfront.
+> I am not a native english speaker (hey from Russia 👋🏻🙂), so I'm apologizing for my grammar/spelling upfront.
 >
 > I did my best to make this guide as short and yet as structured and informative as possible, but I was making it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of specifics here and there. Although, I believe it points you to the right direction in general.
 >
@@ -90,7 +90,7 @@ Another important thing about AI memory is it's size. With each input you give, 
 Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.
 
 #### Mention the subject in entry
-When you mention a thing in `Keys` section, also mention it in the `Entry` itself. From now on, I'm gonna give examples in Mass Effect universe *(since that's the scenario I want to make and the one I've learned the subject for)*.
+When you mention a thing in `Keys` section, also mention it in the `Entry` itself. From now on, I'm gonna give examples in Mass Effect universe *(since that's the scenario I want to make and the one I'm learning the subject for)*.
 <details>
 <summary>Example</summary>
   
@@ -106,7 +106,7 @@ When you mention a thing in `Keys` section, also mention it in the `Entry` itsel
 </details>
 
 #### Use `is` instead of `has`
-As stated above, `has` is much weaker than `is`. To a degree that the AI can loose the connection entirely. Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
+As [stated above](#but-im-not-a-programmer), `has` is much weaker than `is`. To a degree that the AI can loose the connection entirely. Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
 <details>
 <summary>Example</summary>
   
@@ -124,14 +124,14 @@ I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywor
 > Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
 
 #### Avoid using words with broad meaning
-As a non-native english speaker, I have a small vocabulary myself. But whenever you can, put the words that carry as many sense as possible, but that sense shouldn't be broad. Ideally, your text should look like hokku, where each word carries a whole ocean of info. Remember those ridiculously clickbaity screaming tabloid headlines that yellow journalism likes to use? Like that. Each word there carries a whole image. Check yourself:
+As a non-native english speaker, I have a small vocabulary myself. But whenever you can, you need to choose the most specific and descriptive words that carry as many meaning as possible, and this should be the same meaning. Ideally, your text should look like hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbaity screaming tabloid headlines that yellow journalism likes to use? Like that. Each word there carries a whole image. Check yourself:
 ```
 Titanic Survivors Found Onboard
 Vampires Attack US Troops
 Alien Bible Found, They Worship Oprah
 ```
 
-A list of words proven to be descriptive is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted above.
+A list of words proven to be descriptive to define a character is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted above.
 
 <details>
 <summary>Example</summary>
