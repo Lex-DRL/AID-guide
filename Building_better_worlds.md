@@ -46,6 +46,8 @@ Currently, the best and also simplest way to build an optimized world info is us
 
 Each section is self-sufficient on it's own, so you can stop whenever you feel for it and (maybe) return later for a more advanced stuff.
 
+Also, before you continue, I strongly suggest reading [World Info guide on the community wiki](https://wiki.aidiscord.cc/wiki/World_Info).
+
 #### List of used terms
 > The `AI Dungeon` (AID) community uses quite a lot of special terms and abbreviations. No need to learn them right now, I'll explain them as I introduce them on the way. But if for some reason you skipped it, you can revisit this section.
 <details>
@@ -232,7 +234,7 @@ Or even a shortened one, saving on characters (also utilizes JSON formatting):
 
 Doing so manually would be tedious, but with addition of scripts feature (which became available for free, too) it can be automated.
 
-Read more details about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
+Read more about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
 
 ### The best format atm
 The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by birb, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
@@ -254,7 +256,7 @@ It's easier to learn from an example, so let's just look into the same John Shep
   
 > `Entry`:
 >
-> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye_color": "brown"}, "hair": {"hair_color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall-189cm", "weight": "average-102.5kg"}}}}]`
+> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye_color": "brown"}, "hair": {"hair_color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall_189cm", "weight": "average_102.5kg"}}}}]`
 </details>
 
 <details>
@@ -282,8 +284,8 @@ Since we're trying to save every last character, you shouldn't put the text like
 > 			},
 > 			"body": {
 > 				"physique": ["muscular", "hunk"], 
-> 				"height": "tall-189cm", 
-> 				"weight": "average-102.5kg"
+> 				"height": "tall_189cm", 
+> 				"weight": "average_102.5kg"
 > 			}
 > 		}
 > 	}
