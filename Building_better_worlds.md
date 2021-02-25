@@ -169,10 +169,10 @@ A list of words proven to be descriptive to define a character is at the same [P
 
 #### Use known categories
 Even if you won't go any further to specific formatting styles, you can (and should) utilise the keywords proven to give good results.
-The list is really long and it's get updated so I won't duplicate the info here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
+The list is really long and gets updated so I won't duplicate it here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
 
 Some of the most noteable are: `SUMMARY`, `MIND`, `APPEAR`, `WORN`, `DESC`, `LIMIT/LACK`. You can read about them at the link above.
-Note that all of them are in `UPPERCASE`. That's not by accident. It's still a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences at the link above. But if you just want the "recommended" approach for beginners, it's definitely `UPPERCASE`.
+Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it's a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences [here](/AID%20WI%20Research%20Sheet.md#useful-categories). But if you just want the "recommended" approach for beginners, it's definitely `UPPERCASE`.
 <details>
 <summary>Example</summary>
   
@@ -185,17 +185,22 @@ Note that all of them are in `UPPERCASE`. That's not by accident. It's still a m
 > APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair-color, brown eyes-color.
 </details>
 
-Note: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
+Note #1: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
 
-Also note: the dash (`-`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). So for some sub-categories it's better to use names like `hair-color` instead of `hair color` or just `color`.
+Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
+
+Note #3: the dash (`-`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) then a space. So for some sub-categories it's better to use names like `hair-color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.
 
 #### Don't use emojis and special characters
-Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter than a regular word.
+Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter and carries more meaning than a regular word.
+
+Non-ASCII unicode characters like `ù` should be avoided in all cases.
+
 Special characters like `<>`, `[]`, `{}` and other symbols used in programming are treated... well, like in programming. The AI is trained on an immense dataset gathered by scraping internet, so it learned the meaning for those chars from where it've seen them the most: in the source code.
 
-This is a good thing, and the WI formattings utilize that. But unless you're using one of them or testing your own format, you should avoid them in general.
+This is a good thing, and the WI formattings utilize that. But unless you're using one of those formats or testing your own, you should avoid them in general. What all the brackets do is grouping words together. So `<hair color>` does the same thing as above. But different brackets have a different meaning for the AI, so if you're going into this territory, you're better off using an already established format.
 
-Non-ASCII unicode characters like `ù` should be avoided in any case.
+And that would be a good place to discuss those.
 
 ## Next step: World Info formats
 Now we're stepping into somewhat hacky area.
