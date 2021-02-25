@@ -25,6 +25,7 @@ This doc is just a compilation of the info already available on the subject atm 
   * [Mention the subject in entry](#mention-the-subject-in-entry)
   * [Use `is` instead of `has`](#use-is-instead-of-has)
   * [Avoid negatives](#avoid-negatives)
+  * [Avoid long sentences](#avoid-long-sentences)
   * [Avoid using words with broad meaning](#avoid-using-words-with-broad-meaning)
   * [Use known categories](#use-known-categories)
   * [Don't use emojis and special characters](#dont-use-emojis-and-special-characters)
@@ -149,6 +150,14 @@ I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywor
 >
 > Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
 
+#### Avoid long sentences
+Even though the AID devs explicitly tell that the AI can understand long sentences, it's bad at this. So you should describe your world with the  shortest statements you can. I myself am one of those who love describing stuff with a single nuanced thought expressed with a long self-interconnected sentence instead of a few smaller ones. The last sentence shows that. But for AI, you need to stay as short and clear as possible. 
+
+Roses are red. Violets are blue. Future is Skynet. AI loves you.<br />
+That's it.
+
+I know how tempting it is to go into intricacies of how vibrant those violets' blue colors are, reminding you of massive nebulas in endless deep space... But unless you're a really good writer capable of making a true words porn who also happened to be a native english speaker, stay away from this. But don't go too simplistic in your descriptions, because you also need to... 
+
 #### Avoid using words with broad meaning
 As a non-native english speaker, I have a small vocabulary myself. But whenever you can, you need to choose the most specific and descriptive words that carry as many meaning as possible, and this should be the same meaning. Ideally, your text should look like hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbaity screaming tabloid headlines that yellow journalism likes to use? Like that. Each word there carries a whole image. Check yourself:
 ```
@@ -157,7 +166,7 @@ Vampires Attack US Troops
 Alien Bible Found, They Worship Oprah
 ```
 
-A list of words proven to be descriptive to define a character is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted above.
+A list of words proven to be descriptive to define a character is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted about negatives.
 
 <details>
 <summary>Example</summary>
@@ -193,17 +202,17 @@ Note #1: the above example shows the use of special phrases like `30y` (no space
 
 Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
 
-Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) then a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.<br>
+Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.<br>
 Earlier, a dash (`-`) char did the same thing, but currently it's treated more like a mathematical minus, so if you see a recipe using dash to connect words, replace it with underscore instead. 
 
 #### Don't use emojis and special characters
-Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter and carries more meaning than a regular word.
+Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter and carries more semantic value than a regular word.
 
 Non-ASCII unicode characters like `ù` should be avoided in all cases.
 
 Special characters like `<>`, `[]`, `{}` and other symbols used in programming are treated... well, like in programming. The AI is trained on an immense dataset gathered by scraping internet, so it learned the meaning for those chars from where it've seen them the most: in the source code.
 
-This is a good thing, and the WI formattings utilize that. But unless you're using one of those formats or testing your own, you should avoid them in general. What all the brackets do is grouping words together. So `<hair color>` does the same thing as above. But different brackets have a different meaning for the AI, so if you're going into this territory, you're better off using an already established format.
+This is a good thing, and the WI formattings utilize that. But unless you're using one of those formats or testing your own, you should avoid these chars in general. What all the brackets do is grouping words together. So `<hair color>` does the same thing as above. But different brackets have a different meaning for the AI, so if you're going into this territory, you're better off using an already established format.
 
 And that would be a good place to discuss those.
 
