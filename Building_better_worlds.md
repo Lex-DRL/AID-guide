@@ -316,3 +316,29 @@ TODO:
 triang brackets:
 * 3 meanings
 * it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
+
+How to test:
+```
+"Okay, AID," you say, "Interpret this: <blablabla>"
+
+I interpret this as
+```
+
+Mr. Accountant:
+> I have 3 levels of substantive testing.
+> First is a Surface Level test, this is the "Detailed Description:" This checks to see if the AI can even understand what I am talking about.
+> Next is a Contextual Test. Usually around 550chars of prompting for dragon. Here I test how the entry works with some context. Is the AI understanding what the character is supposed act like? Multiple tests here, blind date, boss encounter, castle delve.
+> Finally there is a third level of testing. The 2k Prompt, it holds 2000 chars in intial prompt, a good chunk of memory. And and should test MULTIPLE world entries at once.
+> This is to simulate going through a mid-story.
+
+Also him:
+> For a selection of my Boss Encounter tests, search my user name, and "fog". I believe there's around 78 messages that testing results of entries, contextual level
+
+Onyx:
+```
+You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing. 
+
+You: AID, please interpret the meaning of the following:
+```
+> And in remember I have:
+> `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`
