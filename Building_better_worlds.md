@@ -36,12 +36,11 @@ An introductory guide for game masters / somewhat experienced players who want t
 </details>
 
 #### Who's the guide for
-By no means I intend to provide a comprehensive research on the subject of Machine-Learning (ML) techniques in AID. If you're one of those data scientists / ML enthusiasts, skip it entirely and go directly to [AID WI Research Sheet](/AID%20WI%20Research%20Sheet.md).
+By no means this guide is a comprehensive research on the subject of Machine-Learning (ML) techniques in AID. If you're one of those data scientists / ML enthusiasts, skip it entirely and go directly to [AID WI Research Sheet](/AID%20WI%20Research%20Sheet.md).
 
-This guide is for those, who just want to **play** the game and make it's responses look less like the ones of a grandma with alzheimer.
+This guide is for **players**, who just want to make the game's responses look less like the ones of a grandma with alzheimer.
 
-I also realize that people with a different background (and desire to dig deep into nuts and bolts of AID model) might be reading this guide. So it's split into 3 sections.
-
+People with different backgrounds might be reading this guide. So it's split into 3 sections.<br />
 Currently, the best and also simplest way to build an optimized world info is using scripts (section 3). But to fully utilize this approach, you need to be familiar with techniques in first two sections, anyway. So those are ordered not by what's more recent/effective but by it's complexity, going from simplest to hardest to understand.
 
 Each section is self-sufficient on it's own, so you can stop whenever you feel for it and (maybe) return later for a more advanced stuff.
@@ -49,7 +48,7 @@ Each section is self-sufficient on it's own, so you can stop whenever you feel f
 Also, before you continue, I strongly suggest reading [World Info guide on the community wiki](https://wiki.aidiscord.cc/wiki/World_Info).
 
 #### List of used terms
-> The `AI Dungeon` (AID) community uses quite a lot of special terms and abbreviations. No need to learn them right now, I'll explain them as I introduce them on the way. But if for some reason you skipped it, you can revisit this section.
+> The `AI Dungeon` (AID) community uses some special terms and abbreviations. No need to learn them right now, I'll explain them as I introduce them on the way. But if for some reason you skipped it, you can revisit this section.
 <details>
 <summary>Terms and abbreviations</summary>
   
