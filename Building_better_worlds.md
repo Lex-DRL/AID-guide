@@ -1,16 +1,14 @@
 # Building better worlds <sub>*(in AI Dungeon)*</sub>
 An introductory guide for game masters / somewhat experienced players who want to enhance `AI Dungeon`'s output and make it generate a more believable story, with a detailed/developed world.
 
-This doc is just a compilation of the info already available on the subject atm of writing. See the [Credits](#credits-and-links) section for details.
-
 <details>
 <summary>Disclaimer</summary>
   
-> I am not a native english speaker (hey from Russia 👋🏻🙂), so I'm apologizing for my grammar/spelling upfront.
+> 1. Everything presented on this page is a result of other people's research. You can call this article a meta-research, a shameless rewrite or a compilation of the already available info. I call it an introductory  guide. See the [Credits](#credits-and-links) section.
+> 2. I need to apologize for my english upfront. I'm not a native english speaker (hey from Russia, btw 👋🏻🙂).
+> 3. I did my best to make this guide as short and yet as structured and informative as possible, but I was making it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of them here and there. Although, I believe it points you to the right direction in general.
 >
-> I did my best to make this guide as short and yet as structured and informative as possible, but I was making it alongside with learning the subject myself. So there might be some mistakes, missing specifics or too much of specifics here and there. Although, I believe it points you to the right direction in general.
->
-> The doc follows the license of this repo, so feel free to commit/pull request any corrections you see fit.
+> Feel free to suggest any corrections you see fit.
 >
 > — [Lex (DRL) Darlog](https://github.com/Lex-DRL)
 </details>
