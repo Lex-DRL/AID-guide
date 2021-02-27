@@ -298,7 +298,7 @@ As stated above (and you might already know), modern AI learns from it's experie
 
 That's what AID community discovered from practice, confirmed with a plenty of tests/evidences and came to the conclusion that it's a much superior way to describe a world than a regular prose. So yes, you can type just a plain natural language into WI entries, and AID will automagically understand it. But you **shouldn't** do it this way. Instead, you should describe your world in a more machine-readable format. Don't worry, you won't cause the AI to generate a machine-like text by doing so, quite the opposite: since it understands the world better, it produces more believable results. So, yes, counterintuitively, to make the output more reasonable for a human, you should describe WI in a more cryptic way.
 
-That's where the main WI formats emerged from. The few most used ones are called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, Zaltys 🐍#5362, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
+That's where the main WI formats emerged from. The few most used ones are called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, `Zaltys`, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
 
 ### A couple of notes relevant for all formats
 * All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](/AID%20WI%20Research%20Sheet.md#categories-table).
@@ -322,14 +322,14 @@ Doing so manually would be tedious, but with addition of scripts feature (which 
 Read more about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
 
 ### The best format atm
-The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by birb, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
+The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by `birb`, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
 
 Some of the statements in that guide contradict each other, so some info must be outdated. What I got told in the AID discord server is:
 * `JSON` is discouraged because of how wasteful it is, requiring too much boilerplate code.
 * All Monky's formats are the most efficient ones in term of character/token saving. They're also simpler, easier to use, more readable and more forgiving to bad wording. So `Futureman` (the latest of Monky's) might be a good starting point for non-native speakers or for use with scripts like `EWIJSON` (see the next section).
 * `Zaltys`' format seems to be the most efficient one that also supports categories. And having those is a big deal.
 
-Whichever you choose, it's confirmed by the community members (Zaltys 🐍#5362 and Mr.Accountant 🐧#3984) that you can freely combine any styles you like in a single WI and even in a single entry, as long as you use each format on a separate line.
+Whichever you choose, it's confirmed by the community members (`Zaltys` and `Mr.Accountant`) that you can freely combine any styles you like in a single WI and even in a single entry, as long as you use each format on a separate line.
 
 It's easier to learn from an example, so let's just look into the same John Shepard entry I've shown above, but written in each of those formats:
 
@@ -387,9 +387,18 @@ I'm not going to explain it's syntax: if you understand it, you don't need it, a
 
 ## Credits and links
 
-... Massive thanks to <>, who patiently answered all my questions as I was seeking for a solid understanding of the subject.
+This guide is written by [Lex (DRL) Darlog](https://github.com/Lex-DRL).
 
-TODO:
+As referred multiple times along the guide, a big part of it is a simplified/revisited [AI Dungeon World Info Research and Reference](/AID%20WI%20Research%20Sheet.md) made by `birb` and other people who helped him, see his own [credits section](/AID%20WI%20Research%20Sheet.md#ending-notes).
+
+Another big source of it is... just answers of people, active users on the [official AID discord server](https://discord.com/invite/JpgsTF3). Massive thanks to `Mr.Accountant 🐧#3984`, who has shown an incredible patience answering all my questions as I was putting scattered bits and pieces of the subject together. Also thanks to `Zalty's 🐍#5362`, `Monky#6421`, the same `birb` (`Belverk#8526`) and `Onyx#0489`.
+
+Other sources used, in no particular orer:
+* [AID community wiki](https://wiki.aidiscord.cc/)
+
+
+
+## TODO:
 `you` keyword
 triang brackets:
 * 3 meanings
