@@ -27,6 +27,7 @@ An introductory guide for game masters / somewhat experienced players who want t
   * [Avoid long sentences](#avoid-long-sentences)
   * [Use the most descriptive words](#use-the-most-descriptive-words)
   * [Use known categories](#use-known-categories)
+  * [Numbers and units](#numbers-and-units)
   * [Don't use emojis and special characters](#dont-use-emojis-and-special-characters)
 - [Next step: World Info formats](#next-step-world-info-formats)
   * [A couple of notes relevant for all formats](#a-couple-of-notes-relevant-for-all-formats)
@@ -255,7 +256,7 @@ Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it'
 > `Entry`:
 >
 > Shepard: human male, 30y, military, Alliance forces, first human Spectre.<br>
-> Shepard's APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair_color, brown eyes_color.
+> Shepard's APPEAR: 189cm_tall, 102kg, muscular, short military haircut, dark hair_color, brown eyes_color.
 </details>
 
 Note #1: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
@@ -264,6 +265,20 @@ Note #2: the AI has shown that it correctly detects shortened keywords, like `AP
 
 Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.<br>
 Earlier, a dash (`-`) char did the same thing, but currently it's treated more like a mathematical minus, so if you see a recipe using dash to connect words, replace it with underscore instead. 
+
+#### Numbers and units
+If you're a hardcore Mass Effect fan, you might've noticed that I've described Shepard's weight as `102kg`, even though he actually weighs `102.5kg`, according to [wiki](https://masseffectfanfiction.fandom.com/wiki/John_Shepard). Again, it's on purpose. See, we've got a contradiction here.
+
+On the one hand, you should write units (`kg`) joined with the number to make it a single token, which the AI understands better.<br />
+On the other, the dot is a very strong delimiter *(since it's normally an end of a sentence)*, so writing `102.5kg` might actually confuse the AI. Generally speaking, Dragon is somewhat ok with numbers, while Griffin is really bad with them. So, what to do?
+
+* If you can, avoid putting a specific number altogether. Is it enough that a character has an `average weight` or is a `lightweight` elf/salarian? Go for it.
+* If you need a number, try rounding it to integers, not higher than 3 digits. Go for a different unit if you need. So, `300m` but `3km` (not `3000m`).
+* If you have a special number that can't be represented with any of the above (say, 1750m), the only correct answer would be: "you need to test it yourself". It **might** be understood by the AI better as `1750m` or `1.75km`, but it can also be the opposite in a different context mid-story. So, this is the hardest edge case.
+* Too big numbers are very hard to comprehend, both for Griffin and Dragon. 
+* Additionally #1, `Monky` suggested just spelling it out: `seventeen hundred meters`. Obviously, this eats up **A LOT** of characters, but it's also the most stable/predictable one.
+* Additionally #2, even if the AI correctly interprets the given number, it doesn't guarantee that it understands what it *means*. Is `189cm` tall or short? It doesn't know it *(well, it knows... somewhat, but it can describe him as tall in one place and as short in another)*. So if you do need/want to give a specific number, you might also want to attach a semantic meaning of it. Possibly, joined with `_`, to better tie them together.<br />
+Like: `189cm_tall`, `102kg_heavy`. *(`Zaltys` confirmed, that it works better in this particular order: number, then word - not the other way around)* 
 
 #### Don't use emojis and special characters
 Unicode emojis are supported but they cost 2 tokens. Use with caution, only if you really want to use those or an emoji as actually shorter and carries more semantic value than a regular word.
