@@ -309,6 +309,9 @@ I'm not going to explain it's syntax: if you understand it, you don't need it, a
 ## Last step: Scripts
 
 ## Credits and links
+
+... Massive thanks to <>, who patiently answered all my questions as I was seeking for a solid understanding of the subject.
+
 TODO:
 `you` keyword
 triang brackets:
@@ -316,11 +319,16 @@ triang brackets:
 * it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
 
 How to test:
+
+The community haven't <come to terms with / agreed on> testing yet, but...
+
+Dee nol:
 ```
 "Okay, AID," you say, "Interpret this: <blablabla>"
 
 I interpret this as
 ```
+> Was the prompt, and you post whatever after "Interpret this: " above. Though, I don't think this works very well with entire entries. If you have Dragon you can do "Detailed description of WI key here:"
 
 Mr. Accountant:
 > I have 3 levels of substantive testing.
