@@ -19,6 +19,7 @@ An introductory guide for game masters / somewhat experienced players who want t
 - [Introduction](#introduction)
   * [But I'm not a programmer!](#but-im-not-a-programmer)
   * [How AI remembers your WI](#how-ai-remembers-your-wi)
+  * [Testing](#testing)
 - [First steps: optimising just a plain english](#first-steps-optimising-just-a-plain-english)
   * [Mention the subject in entry](#mention-the-subject-in-entry)
   * [Use `is` instead of `has`](#use-is-instead-of-has)
@@ -66,7 +67,7 @@ If you've got here, I believe you've already played [AI Dungeon (AID)](https://p
 <details>
 <summary>Why AID's NNs suck and what we can do about it</summary>
   
-> Even though AI dungeon might seem a neural-network (NN) auto-magical "next generation of software", it's still just a software. So it has it's limitations. One of the core ones is memory limit. We'll discuss the specifics further, but in short, if you think of AI as of a real person, it would be a really, really dumb one. Set aside, that comparing AI NNs with a real brain is incorrect in general, the current state of technology is only capable of building NNs that can barely compete with an intellect of really primitive lifeforms, like bees or worms, and it can do it only on a very powerful computers. We're nowhere near human level of intellect yet. Well, maybe, if we combine **ALL** of the existing computing power on Earth (including every smart TV or smart watch) to a massive cloud server, it can be comparable to a single human brain, but that's it. And that brain won't be an Einstein one.
+> Even though AI dungeon might seem a neural-network (NN) auto-magical "next generation of software", it's still just a software. So it has it's limitations. One of the core ones is memory limit. We'll discuss the specifics further, but in short, if you think of AI as of a real person, it would be a really, really dumb one. Set aside, that comparing AI NNs with a real brain is incorrect in general, the current state of technology is only capable of building NNs that can barely compete with an intellect of really primitive lifeforms, like bees or worms, and it can do it only on a very powerful computers. We're nowhere near human level of intellect yet. Well, maybe, if we combine **ALL** of the existing computing power on Earth *(including every smart TV or smart watch)* to a massive cloud server, it can be comparable to a single human brain, but that's it. And that brain won't be an Einstein one.
 >
 > So AI Dungeon's NN models (Griffin and Dragon) are (and inevitably will be in any foreseeable future) incapable of truly mimicking a living narrator / game master, that can understand any of your requests and always produce something meaningful.
 >
@@ -81,7 +82,7 @@ Well, you need to stop treating the AI as a "really dumb person" and start treat
 ### But I'm not a programmer!
 The good news is, it's great if you are, but you don't need to be. As long as you understand how the AI works (even in vague terms), you can significantly enhance the output, even staying completely away from "programming" the WI.
 
-So first things first, there are two aspects the AI struggle with:
+So first things first, there are two general problems the AI struggle with:
 
 1. Vague/unclear WI entries;
 2. Too long, non-informative WI entries.
@@ -94,7 +95,7 @@ And let's talk about the the second problem, being informative...
 
 To correctly understand what statement is informative **for the AI** (not for human), we need to discuss how it represents your input in general. Again, I try to stay away from specifics for programmers, but we need to grasp at least the concept.
 
-AI doesn't process the **words** you input. Neither it stores some IDs of these words. Nor it understands the meaning of them. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
+AI doesn't process the **words** you input. Neither it stores some IDs of these words. Nor it understands the meaning of them. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens *(and their combinations, making words for you)* are the actual information the AI works with.
 
 Here's an example of a few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
 <details>
@@ -109,6 +110,64 @@ Another important thing about AI memory is it's size. With each input you give, 
 * The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but [can be used on free account with scripts](#authors-note)) + your `Input` + most recent part of story = 2772 chars. 
 * We want to use those chars as effectively as possible, trying not to waste any of them...
 * ... but at the same time feeding as much **relevant** data as we can at each input.
+
+### Testing
+Regardless of which approach you choose (stick to the plain english or go all the way to scripts), you need to test how changes in your descriptions affect the output.<br />
+Both fortunately and unfortunately, the AI's output is non-deterministic, and the models keep changing with each backend update.
+So the community haven't agreed on a single standardized set of tests to check the quality of your world descriptions **objectively**.
+
+However, there are a few approaches that the community embraced as somewhat-standard ones. The idea is, you need to put your description and immediately after it enforce the AI to spit out how it understood you.
+
+The first way to do so is putting a description with immediate request for the AI to "interpret" it.
+
+`Mr.Accountant` (a discord community member) suggested doing it in a simple way:
+<details>
+<summary>Mr.Accountant approach</summary>
+
+> ```
+> <blablabla>
+> I interpret this as
+> ```
+> Here, replace `<blablabla>` (including `<>`) with your description. Note that `I interpret this as` is also a part of the same input, at a new line. It's an enforcement for the AI to continue the sentence.
+</details>
+
+Another discord user, `Onyx`, suggested different way of doing the same thing:
+<details>
+<summary>Onyx approach</summary>
+
+> First, define the AID character:<br />
+> `You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing.`
+>
+> Then, put the testing text:<br />
+> ```
+> You: AID, please interpret the meaning of the following:
+> <blablabla>
+> 
+> AID: I interpret this as
+> ```
+> 
+> You should also have the AID character defined in your `Remember`. Like the following (don't worry about this cypher for now, just copy-paste it; it's explained in [formats section](#next-step-world-info-formats)):<br /> 
+> `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`
+</details>
+
+As you can see, even here there's no universal way to do it. However, I find Mr.Accountant's approach much more appealing for it's simplicity.
+
+The second way of testing is with `Detailed Description`:<br />
+You add an entry with your character description to the WI, and then trigger it with:
+```
+Detailed Description of <Character Name>:
+```
+
+Also, here's `Mr.Accountant`'s comment on the subject:
+> I have 3 levels of substantive testing.<br/>
+> First is a Surface Level test, this is the `Detailed Description:` (or `Interpret this`). This checks to see if the AI can even understand what I am talking about.<br />
+> Next is a Contextual Test. Usually around 550chars of prompting for dragon. Here I test how the entry works with some context. Is the AI understanding what the character is supposed act like?<br />
+> Finally there is a third level of testing. The 2k Prompt, it holds 2000 chars in initial prompt, a good chunk of memory. And should test MULTIPLE world entries at once.
+> This is to simulate going through a mid-story.
+
+A few things to keep in mind: depending on your `Randomness` setting, you may have different results. What's already present in your WI / Remember / history - also affect the output. So for best results, you should set up a clean scenario.
+
+Now, with all that prelude out of the way, we can finally start tweaking WI.
 
 ## First steps: optimising just a plain english
 Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.<br />
@@ -317,34 +376,3 @@ TODO:
 triang brackets:
 * 3 meanings
 * it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
-
-How to test:
-
-The community haven't <come to terms with / agreed on> testing yet, but...
-
-Dee nol:
-```
-"Okay, AID," you say, "Interpret this: <blablabla>"
-
-I interpret this as
-```
-> Was the prompt, and you post whatever after "Interpret this: " above. Though, I don't think this works very well with entire entries. If you have Dragon you can do "Detailed description of WI key here:"
-
-Mr. Accountant:
-> I have 3 levels of substantive testing.
-> First is a Surface Level test, this is the "Detailed Description:" This checks to see if the AI can even understand what I am talking about.
-> Next is a Contextual Test. Usually around 550chars of prompting for dragon. Here I test how the entry works with some context. Is the AI understanding what the character is supposed act like? Multiple tests here, blind date, boss encounter, castle delve.
-> Finally there is a third level of testing. The 2k Prompt, it holds 2000 chars in intial prompt, a good chunk of memory. And and should test MULTIPLE world entries at once.
-> This is to simulate going through a mid-story.
-
-Also him:
-> For a selection of my Boss Encounter tests, search my user name, and "fog". I believe there's around 78 messages that testing results of entries, contextual level
-
-Onyx:
-```
-You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing. 
-
-You: AID, please interpret the meaning of the following:
-```
-> And in remember I have:
-> `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`
