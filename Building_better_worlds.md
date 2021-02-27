@@ -25,7 +25,7 @@ An introductory guide for game masters / somewhat experienced players who want t
   * [Use `is` instead of `has`](#use-is-instead-of-has)
   * [Avoid negatives](#avoid-negatives)
   * [Avoid long sentences](#avoid-long-sentences)
-  * [Avoid using words with broad meaning](#avoid-using-words-with-broad-meaning)
+  * [Use the most descriptive words](#use-the-most-descriptive-words)
   * [Use known categories](#use-known-categories)
   * [Don't use emojis and special characters](#dont-use-emojis-and-special-characters)
 - [Next step: World Info formats](#next-step-world-info-formats)
@@ -104,7 +104,12 @@ Here's an example of a few common words [tested for tokens by the community](/AI
 ![CATEGORY tokens](/imgs/cat-tokens.png "CATEGORY tokens")
 </details>
 
-So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english, which, when represented with tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
+So, back to the track. You can make an entry which have many **characters** but not so many **tokens**, and vice versa. Or you can make a descriptive entry in english, which, when represented with tokens, doesn't make much sense for the AI. Moreover, different combinations of tokens have different "strength" between them in the AI eyes, so a bad choice of words can make the AI group tokens incorrectly and therefore misunderstand you. We want to:
+* use the least number of tokens we can,
+* which are as close to our intent as possible,
+* while making them as informative as possible.
+
+That's the main goals that all the techniques in this guide are focused on.
 
 Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory is shared between different parts can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three points:
 * The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but [can be used on free account with scripts](#authors-note)) + your `Input` + most recent part of story = 2772 chars. 
@@ -122,7 +127,7 @@ The first way to do so is putting a description with immediate request for the A
 
 `Mr.Accountant` (a discord community member) suggested doing it in a simple way:
 <details>
-<summary>Mr.Accountant approach</summary>
+<summary>Mr.Accountant's approach</summary>
 
 > ```
 > <blablabla>
@@ -131,7 +136,7 @@ The first way to do so is putting a description with immediate request for the A
 > Here, replace `<blablabla>` (including `<>`) with your description. Note that `I interpret this as` is also a part of the same input, at a new line. It's an enforcement for the AI to continue the sentence.
 </details>
 
-Another discord user, `Onyx`, suggested different way of doing the same thing:
+Another discord user, `Onyx`, suggested another way of doing the same thing:
 <details>
 <summary>Onyx approach</summary>
 
@@ -208,15 +213,16 @@ I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywor
 > Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
 
 #### Avoid long sentences
-Even though the AID devs explicitly tell that the AI can understand long sentences, it's bad at this. So you should describe your world with the  shortest statements you can. I myself am one of those who love describing stuff with a single nuanced thought expressed with a long self-interconnected sentence instead of a few smaller ones. The last sentence shows that. But for AI, you need to stay as short and clear as possible. 
+Even though the AID devs explicitly tell that the AI **can** understand long sentences, it's not **good** at this. So you should describe your world with the  shortest statements you can.
 
 Roses are red. Violets are blue. Future is Skynet. AI loves you.<br />
 That's it.
 
-I know how tempting it is to go into intricacies of how vibrant those violets' blue colors are, reminding you of massive nebulas in endless deep space... But unless you're a really good writer capable of making a true words porn who also happened to be a native english speaker, stay away from this. But don't go too simplistic in your descriptions, because you also need to... 
+I know how tempting it is to go into intricacies of how vibrant those violets' blue colors are, reminding you of massive nebulas in endless deep space... But unless you're a really good writer capable of making a true words porn who also happened to be a native english speaker, stay away from this. *(and even if you are, evidences show that special format is still better)*<br />
+But don't go too simplistic in your descriptions, because you also need to... 
 
-#### Avoid using words with broad meaning
-As a non-native english speaker, I have a small vocabulary myself. But whenever you can, you need to choose the most specific and descriptive words that carry as many meaning as possible, and this should be the same meaning. Ideally, your text should look like hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbaity screaming tabloid headlines that yellow journalism likes to use? Like that. Each word there carries a whole image. Check yourself:
+#### Use the most descriptive words
+You should avoid words with broad meaning, like `good` or `bad`, preferring more specific and descriptive ones over them. As a non-native english speaker, I struggle with a small vocabulary myself. But your statements must be absolutely clear. Ideally, your text should look like hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbait-y screaming tabloid headlines that yellow journalism loves to use? Like that. Each word there carries a whole image. Check yourself:
 ```
 Titanic Survivors Found Onboard
 Vampires Attack US Troops
@@ -229,9 +235,7 @@ A list of words proven to be descriptive to define a character is at the same [P
 <summary>Example</summary>
   
 ❌ Bad:
-> Ironically, `bad` itself 😄
->
-> Also, `evil`, `mad`.
+> Ironically, `bad` itself 😄; `evil`, `mad`.
 
 ✔ Good:
 > `cruel`, `sadistic`, `lunatic`.
@@ -250,9 +254,8 @@ Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it'
 
 > `Entry`:
 >
-> Shepard:<br>
-> SUMMARY: human male, 30y, military, Alliance forces, first human Spectre.<br>
-> APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair_color, brown eyes_color.
+> Shepard: human male, 30y, military, Alliance forces, first human Spectre.<br>
+> Shepard's APPEAR: 189cm tall, 102.5kg, muscular, short military haircut, dark hair_color, brown eyes_color.
 </details>
 
 Note #1: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
