@@ -61,7 +61,7 @@ Also, before you continue, I strongly suggest reading [World Info guide on the c
 </details>
 
 ## Introduction
-If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, 3 inputs above, how could it possibly forget it already! You must've faced a similar situation more than once.
+If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, literally at the same screen, how could it possibly forget it already! You must've faced a similar situation more than once.
 
 <details>
 <summary>Why AID's NNs suck and what we can do about it</summary>
@@ -75,7 +75,7 @@ If you've got here, I believe you've already played [AI Dungeon (AID)](https://p
 > How do you accomplish this?
 </details>
 
-Well, you need to stop thinking about the AI as of a "really dumb person" and start thinking of it as of what it actually is: a really smart software.
+Well, you need to stop treating the AI as a "really dumb person" and start treating it as what it actually is: a really smart software.
 
 
 ### But I'm not a programmer!
@@ -94,27 +94,28 @@ And let's talk about the the second problem, being informative...
 
 To correctly understand what statement is informative **for the AI** (not for human), we need to discuss how it represents your input in general. Again, I try to stay away from specifics for programmers, but we need to grasp at least the concept.
 
-AI doesn't remember **words** you input. Neither it stores some IDs of those words. Nor it understands the meaning of those. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
+AI doesn't process the **words** you input. Neither it stores some IDs of these words. Nor it understands the meaning of them. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens are the actual information the AI works with.
 
-Here's an example of few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
+Here's an example of a few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
 <details>
 <summary>Screenshot</summary>
   
 ![CATEGORY tokens](/imgs/cat-tokens.png "CATEGORY tokens")
 </details>
 
-So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english, which, when represented by tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
+So, back to the track. You can make an entry which have many **characters** but not so much **tokens**, and vice versa. Or you can make a descriptive entry in english, which, when represented with tokens, doesn't make much sense for the AI. We want to use at least tokens as possible while keeping them as informative as possible.
 
-Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory shared between different parts can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three things:
+Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory is shared between different parts can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three points:
 * The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but [can be used on free account with scripts](#authors-note)) + your `Input` + most recent part of story = 2772 chars. 
 * We want to use those chars as effectively as possible, trying not to waste any of them...
 * ... but at the same time feeding as much **relevant** data as we can at each input.
 
 ## First steps: optimising just a plain english
-Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.
+Here's a (somewhat) full list of tips I've found so far. These tips don't require "hacking" the WI in any way. As with all other tips, I intend to extend this list with other hints as I find them.<br />
+From now on, we're talking about text for **entries**, not for keys. Also, the examples I'm gonna show are in Mass Effect setting *(since that's the scenario I want to make and the one I'm learning the subject for)*.
 
 #### Mention the subject in entry
-When you mention a thing in `Keys` section, also mention it in the `Entry` itself. From now on, I'm gonna give examples in Mass Effect universe *(since that's the scenario I want to make and the one I'm learning the subject for)*.
+When you mention a thing in `Keys` section, also mention it in the `Entry` itself.
 <details>
 <summary>Example</summary>
   
