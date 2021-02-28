@@ -240,6 +240,9 @@ When you mention a thing in `Keys` section, also mention it in the `Entry` itsel
 > `Entry`: ***Citadel*** is a colossal deep-space station that serves as the capital...
 </details>
 
+If your description is long enough, you might need to remind the AI that you're still describing the same thing.
+According to `Zaltys`, once per 200 tokens (~400 chars) in Dragon / 60 tokens (~100 chars) in Griffin, you need to put the name of entry again.
+
 #### Use `is` instead of `has`
 As [stated above](#but-im-not-a-programmer), `has` is much weaker than `is`. To a degree that the AI [can loose the connection entirely](https://wiki.aidiscord.cc/wiki/World_Info#Entries). Ideally, you should move to a special WI formatting altogether (more on that later), but if you don't, at least use `is`.
 <details>
