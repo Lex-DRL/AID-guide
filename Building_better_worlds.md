@@ -121,6 +121,9 @@ Another important thing about AI memory is it's size. With each input you give, 
 * ... but at the same time feeding as much **relevant** data as we can at each input.
 
 ### Testing
+To test how your text is **tokenized**, you can use a special scenario by `kim`: [Text-to-Token Converter](https://play.aidungeon.io/main/scenarioView?publicId=6927d610-34b7-11eb-b8e1-c185d026672d)
+
+The rest of this section is about checking the ***quality*** of your description.<br />
 Regardless of which approach you choose *(stick to the plain english or go all the way to scripts)*, you need to test how changes in your descriptions affect the output.<br />
 > You can skip this section for now *(if it seems too complicated or you just want to get to the meat of the guide asap)*, it's here just to point your attention to the importance of testing. But anyway, you need to get familiar with it before you start trying the techniques of this guide in practice. So, skip it if you like, but you might need to return here later. If you're still here...
 
@@ -188,8 +191,9 @@ To test anything other than character appearance, you need to do something simil
 > First, you need to define AID as a character in your story. Again, do it either in a separate WI entry or right in `Remember`.
 > Next, you need to make a small story where you ask the AID character to describe your tested entry.
 > 
-> AID description *(don't worry about this cypher for now, just copy-paste it to a separate line in `Remember`; it's explained in [Zaltys/Snek format](#next-step-world-info-formats))*:<br />
-> `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`
+> AID description:<br />
+> `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`<br />
+> Don't worry about this cypher for now, just copy-paste it to a separate line in `Remember` or to a new entry in WI *(with `AID` as a key)*. The "cypher" is [Zaltys/Snek format](#next-step-world-info-formats)
 > 
 > Input:<br />
 > `You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing.`<br />
@@ -216,7 +220,7 @@ Here's `Mr.Accountant`'s comment on the subject:
 
 A few other things to keep in mind: depending on your `Randomness` setting, you may have different results. What's already present in your WI / Remember / history - also affect the output. So for best results, you should start a fresh game *(I suggest creating a special clean scenario for this purpose)*.
 
-If the AI's output is too short, you can also increase it with `Length` setting. 
+If the AI's output is too short, you can also increase it with `Length` setting.
 
 Now, with all that prelude out of the way, we can finally start tweaking WI.
 
@@ -443,6 +447,11 @@ Another big source of it is... just answers of people, active users on the [offi
 
 Other sources used, in no particular orer:
 * [AID community wiki](https://wiki.aidiscord.cc/)
+
+Tools mentioned anywhere in the guide:
+* [Text-to-Token Converter](https://play.aidungeon.io/main/scenarioView?publicId=6927d610-34b7-11eb-b8e1-c185d026672d) test scenario by `kim`
+* Pre-made [OK AID](https://play.aidungeon.io/main/scenarioView?publicId=2df83170-79f9-11eb-b24f-11a7b21bf4b7) test scenario.
+* [AI Dungeon World Info Builder](https://github.com/gimzani/ai-dungeon-worldbuilder) standalone program providing a **MUCH** better UI for world building *(it's an `electron` app: effectively, a web-app with bundled mini-browser)*. If the author (`gimzani`) haven't released a pre-built app, you can find it in this [`Lex-DRL`'s fork](https://github.com/Lex-DRL/ai-dungeon-worldbuilder/releases) 
 
 
 
