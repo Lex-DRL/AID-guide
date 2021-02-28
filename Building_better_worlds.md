@@ -20,6 +20,9 @@ An introductory guide for game masters / somewhat experienced players who want t
   * [But I'm not a programmer!](#but-im-not-a-programmer)
   * [How AI remembers your WI](#how-ai-remembers-your-wi)
   * [Testing](#testing)
+    + [With Dragon](#testing-with-dragon)
+    + [With Griffin](#testing-with-griffin)
+    + [Extra notes](#extra-notes-on-testing)
 - [First steps: optimising just a plain english](#first-steps-optimising-just-a-plain-english)
   * [Mention the subject in entry](#mention-the-subject-in-entry)
   * [Use `is` instead of `has`](#use-is-instead-of-has)
@@ -118,60 +121,102 @@ Another important thing about AI memory is it's size. With each input you give, 
 * ... but at the same time feeding as much **relevant** data as we can at each input.
 
 ### Testing
-Regardless of which approach you choose (stick to the plain english or go all the way to scripts), you need to test how changes in your descriptions affect the output.<br />
-Both fortunately and unfortunately, the AI's output is non-deterministic, and the models keep changing with each backend update.
+Regardless of which approach you choose *(stick to the plain english or go all the way to scripts)*, you need to test how changes in your descriptions affect the output.<br />
+> You can skip this section for now *(if it seems too complicated or you just want to get to the meat of the guide asap)*, it's here just to point your attention to the importance of testing. But anyway, you need to get familiar with it before you start trying the techniques of this guide in practice. So, skip it if you like, but you might need to return here later. If you're still here...
+
+Both fortunately and unfortunately, the AI's output is non-deterministic, and the models keep changing with each major update.
 So the community haven't agreed on a single standardized set of tests to check the quality of your world descriptions **objectively**.
 
 However, there are a few approaches that the community embraced as somewhat-standard ones. The idea is, you need to put your description and immediately after it enforce the AI to spit out how it understood you.
 
-The first way to do so is putting a description with immediate request for the AI to "interpret" it.
-
-`Mr.Accountant` (a discord community member) suggested doing it in a simple way:
+#### Testing with Dragon
+... is pretty simple since you can basically ask the AI directly, and it would understand what you want from it.<br />
+So, with Dragon, you can test your entries by creating a completely clean scenario and putting this as the very first prompt/input:
 <details>
-<summary>Mr.Accountant's approach</summary>
+<summary>Example #1 - "I interpret this" approach (suggested by Mr.Accountant)</summary>
 
-> ```
-> <blablabla>
-> I interpret this as
-> ```
-> Here, replace `<blablabla>` (including `<>`) with your description. Note that `I interpret this as` is also a part of the same input, at a new line. It's an enforcement for the AI to continue the sentence.
+```
+<blablabla>
+I interpret this as
+```
+</details>
+<details>
+<summary>Example #2 - "Detailed Description" approach</summary>
+
+```
+<blablabla>
+Detailed description of <entity>:
+```
+</details>
+<details>
+<summary>Example #3 - "Detailed Description with A/N" (by DarkFlameSailor)</summary>
+
+Here, we further enforce the AI to generate the output in prose, not in some form of dossier *(which can happen with previous ones)*.
+Don't worry about the first line yet, it's in [Monky's format](#next-step-world-info-formats) *(you need to keep `<<` and `>>>>` chars)*.
+```
+<<Editor's note: writing style: vivid, inventive, prose>>>>
+<blablabla>
+Vivid description of <entity>:
+```
 </details>
 
-Another discord user, `Onyx`, suggested another way of doing the same thing:
-<details>
-<summary>Onyx approach</summary>
+In all the above examples, replace `<blablabla>` (including `<>`) with your description and `<entity>` with the actual name of the described entity. Note that all the lines in each example are sent as a single initial input.
 
-> First, define the AID character:<br />
-> `You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing.`
->
-> Then, put the testing text:<br />
-> ```
-> You: AID, please interpret the meaning of the following:
-> <blablabla>
+Alternatively, you can remove the description from initial prompt (input) itself and put it into `Remember` or `World Info` section *(yes, **before** you send this prompt)*.
+
+Either way, dragon should spit out the requested description, as it understands it.
+
+#### Testing with Griffin
+... is not that easy, though. Even if you have a perfectly clear description for the AI, Griffin can generate some nonsense with the above approaches. With this model, you need to jump through some hoops with extra setup to make a small **story** that will force Griffin to spit out your description.<br />
+First, now it's **recommended** to put the description either in WI entry or into `Remember`, not into the prompt itself. Next, your initial prompt needs to be much more involved, and it needs to call the  entry by exactly the key you've set for it.
+
+To test the appearance description of your character, `Mr.Accountant` suggested doing it like this:
+<details>
+<summary>Griffin example #1 - "you look into the mirror" approach</summary>
+
+Input:
+```
+You are <character name>, as you look into the mirror, you reflect on yourself.
+```
+</details>
+
+To test anything other than character appearance, you need to do something similar *(e.g., for location: `You step into <location name> and look around`)* **OR** you can use another approach suggested by `Onyx`:
+
+<details>
+<summary>Griffin example #2 - "OK AID" approach</summary>
+
+> First, you need to define AID as a character in your story. Again, do it either in a separate WI entry or right in `Remember`.
+> Next, you need to make a small story where you ask the AID character to describe your tested entry.
 > 
-> AID: I interpret this as
-> ```
-> 
-> You should also have the AID character defined in your `Remember`. Like the following (don't worry about this cypher for now, just copy-paste it; it's explained in [formats section](#next-step-world-info-formats)):<br /> 
+> AID description *(don't worry about this cypher for now, just copy-paste it to a separate line in `Remember`; it's explained in [Zaltys/Snek format](#next-step-world-info-formats))*:<br />
 > `AID:[Advanced AI. APPE:hologram;MENT:professional∕confident∕practical∕sophisticated∕mature;SUMM<AID>:linguistic AI∕genius∕fast processing&reply∕omniscient∕knows everything∕accurate.]`
+> 
+> Input:<br />
+> `You are a researcher sitting at the terminal of an advanced supercomputer talking to an AI named AID. You are testing the AI's reasoning abilities. You sit down at the console and begin typing.`<br />
+> `You: AID, please interpret the meaning of the following:`<br />
+> `<blablabla>`<br />
+> `AID: I interpret this as`
+>
+> To test the description stored in WI/Remember *(which is more representative)*, you can slightly modify the input:<br />
+> `...`<br />
+> `You: AID, please tell me what you know about <entity>.`<br />
+> `AID:`<br />
+> You get the idea.
 </details>
 
-As you can see, even here there's no universal way to do it. However, I find Mr.Accountant's approach much more appealing for it's simplicity.
+Here's a pre-made scenario for this: [Test: OK AID](https://play.aidungeon.io/main/scenarioView?publicId=2df83170-79f9-11eb-b24f-11a7b21bf4b7)
 
-The second way of testing is with `Detailed Description`:<br />
-You add an entry with your character description to the WI, and then trigger it with:
-```
-Detailed Description of <Character Name>:
-```
-
-Also, here's `Mr.Accountant`'s comment on the subject:
-> I have 3 levels of substantive testing.<br/>
-> First is a Surface Level test, this is the `Detailed Description:` (or `Interpret this`). This checks to see if the AI can even understand what I am talking about.<br />
+#### Extra notes on testing
+Here's `Mr.Accountant`'s comment on the subject:
+> I have 3 levels of substantive testing.<br />
+> First is a Surface Level test *(all the above are surface tests)*. This checks to see if the AI can even understand what I am talking about.<br />
 > Next is a Contextual Test. Usually around 550chars of prompting for dragon. Here I test how the entry works with some context. Is the AI understanding what the character is supposed act like?<br />
 > Finally there is a third level of testing. The 2k Prompt, it holds 2000 chars in initial prompt, a good chunk of memory. And should test MULTIPLE world entries at once.
 > This is to simulate going through a mid-story.
 
-A few things to keep in mind: depending on your `Randomness` setting, you may have different results. What's already present in your WI / Remember / history - also affect the output. So for best results, you should set up a clean scenario.
+A few other things to keep in mind: depending on your `Randomness` setting, you may have different results. What's already present in your WI / Remember / history - also affect the output. So for best results, you should start a fresh game *(I suggest creating a special clean scenario for this purpose)*.
+
+If the AI's output is too short, you can also increase it with `Length` setting. 
 
 Now, with all that prelude out of the way, we can finally start tweaking WI.
 
