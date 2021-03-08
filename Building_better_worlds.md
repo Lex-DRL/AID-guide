@@ -40,7 +40,7 @@ An introductory guide for game masters / somewhat experienced players who want t
  - [Last step: Scripts](#last-step-scripts)
 </details>
 
-#### Who's the guide for
+#### Who the guide is for
 By no means this guide is a comprehensive research on the subject of Machine-Learning (ML) techniques in AID. If you're one of those data scientists / ML enthusiasts, skip it entirely and go directly to [AID WI Research Sheet](/AID%20WI%20Research%20Sheet.md).
 
 This guide is for **players**, who just want to make the game's responses look less like the ones of a grandma with alzheimer.
@@ -275,7 +275,7 @@ I know how tempting it is to go into intricacies of how vibrant those violets' b
 But don't go too simplistic in your descriptions, because you also need to... 
 
 #### Use the most descriptive words
-You should avoid words with broad meaning, like `good` or `bad`, preferring more specific and descriptive ones over them. As a non-native english speaker, I struggle with a small vocabulary myself. But your statements must be absolutely clear. Ideally, your text should look like hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbait-y screaming tabloid headlines that yellow journalism loves to use? Like that. Each word there carries a whole image. Check yourself:
+You should avoid words with broad meaning, like `good` or `bad`, preferring more specific and descriptive ones over them. As a non-native english speaker, I struggle with a small vocabulary myself. But the words you choose must be absolutely clear and as specific as possible. Ideally, your text should look like a hokku, where each word carries a whole ocean of rich associations about the same thing. Remember those ridiculously clickbait-y screaming tabloid headlines that yellow journalism loves to use? Like that. Each word there carries a whole image. Check yourself:
 ```
 Titanic Survivors Found Onboard
 Vampires Attack US Troops
@@ -295,7 +295,7 @@ A list of words proven to be descriptive to define a character is at the same [P
 </details>
 
 #### Use known categories
-Even if you won't go any further to specific formatting styles, you can (and should) utilise the keywords proven to give good results.
+Even if you won't go any further to specific formatting styles, you can (and should) utilize the keywords proven to give good results.
 The list is really long and gets updated so I won't duplicate it here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
 
 Some of the most noteable are: `SUMMARY`, `MIND`, `APPEAR`, `WORN`, `DESC`, `LIMIT/LACK`. You can read about them at the link above.
@@ -315,7 +315,7 @@ Note #1: the above example shows the use of special phrases like `30y` (no space
 
 Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
 
-Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understand better that you mean specifically **hair** color: not just some arbitrary color.<br>
+Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understands better that you mean specifically **hair** color: not just some arbitrary color.<br>
 Earlier, a dash (`-`) char did the same thing, but currently it's treated more like a mathematical minus, so if you see a recipe using dash to connect words, replace it with underscore instead. 
 
 #### Numbers and units
@@ -341,7 +341,7 @@ Special characters like `<>`, `[]`, `{}` and other symbols used in programming a
 
 This is a good thing, and the WI formattings utilize that. But unless you're using one of those formats or testing your own, you should avoid these chars in general. What all the brackets do is grouping words together. So `<hair color>` does the same thing as above. But different brackets have a different meaning for the AI, so if you're going into this territory, you're better off using an already established format.
 
-And that would be a good place to discuss those.
+And this would be a good place to discuss those.
 
 ## Next step: World Info formats
 Now we're stepping into somewhat hacky area.
