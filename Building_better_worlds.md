@@ -471,7 +471,31 @@ I'm not going to explain it's syntax: if you understand it, you don't need it, a
 
 Zaltys' format is basically stripped down JSON with a few extra tricks to further shorten the description.
 
-#### Monky's
+#### Monky's example
+The example shows the latest of Monky's formats, which is `Futureman` (superseded `Neanderthal`, which in turn superseded `Caveman`).
+<details>
+<summary>Example</summary>
+  
+> `Entry`:
+>
+> `<<John Shepard age 30 human he 189cm tall 102kg heavy>>>> <<Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>> <<Shepard serious heroic just>>>> <<Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>> <<Shepard wear Alliance uniform>>>>`
+</details>
+
+<details>
+<summary>Human-readable example</summary>
+
+> `Entry`:
+>
+> ```
+> <<John Shepard age 30 human he 189cm tall 102kg heavy>>>>
+> <<Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>>
+> <<Shepard serious heroic just>>>>
+> <<Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>>
+> <<Shepard wear Alliance uniform>>>>
+> ```
+</details>
+
+No, it's not a typo: each statement in Futureman starts with **two** `<` chars and ends with **four** `>` chars.
 
 ## Last step: Scripts
 
