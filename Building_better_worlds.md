@@ -181,6 +181,10 @@ Input:
 ```
 You are <character name>, as you look into the mirror, you reflect on yourself.
 ```
+Or:
+```
+You are <character name>, as you look into the mirror, you look at your appearance.
+```
 </details>
 
 To test anything other than character appearance, you need to do something similar *(e.g., for location: `You step into <location name> and look around`)* **OR** you can use another approach suggested by `Onyx`:
@@ -307,11 +311,12 @@ Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it'
 
 > `Entry`:
 >
-> Shepard: human male, 30y, military, Alliance forces, first human Spectre.<br>
-> Shepard's APPEAR: 189cm_tall, 102kg, muscular, short military haircut, dark hair_color, brown eyes_color.
+> John Shepard: human male, age of 30, 189cm, 102kg, first human Spectre, military, serves Alliance, commander, captain of Normandy.<br />
+> Shepard's APPEAR: muscular, hunk, dark hair_color and Buzz Cut, brown eyes_color.<br />
+> Shepard's MIND: serious, heroic, just.
 </details>
 
-Note #1: the above example shows the use of special phrases like `30y` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
+Note #1: the above example shows the use of special phrases like `189cm` (no space). They're not just allowed but recommended to use: common phrases are treated as a single token and easy to understand for the AI.
 
 Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
 
@@ -387,13 +392,13 @@ It's easier to learn from an example, so let's just look into the same John Shep
 
 ### Format examples
 
-#### JSON
+#### JSON example
 <details>
 <summary>Example</summary>
   
 > `Entry`:
 >
-> `[{"Shepard": {"name": ["Shepard", "John", "John Shepard"], "age": "30y", "gender": "male", "species": ["human", "man"], "APPEAR": {"eyes": {"eye_color": "brown"}, "hair": {"hair_color": "dark brown", "hair-length": ["short", "shaved"], "hair-style": "military haircut"}, "body": {"physique": ["muscular", "hunk"], "height": "tall_189cm", "weight": "average_102.5kg"}}}}]`
+> `[{"John Shepard": {"DESC": ["military", "serves Alliance", "first human Spectre", "commander", "captain of Normandy"], "age": "30", "gender": "male", "species": ["human", "man"], "MIND": ["serious and heroic", "just"], "APPEAR": {"eyes": {"eye_color": "brown"}, "hair": {"hair_color": "dark", "hair_length": ["short", "shaved"], "hair_style": "Buzz Cut"}, "body": {"physique": ["muscular", "hunk"], "height": ["189cm", "tall"], "weight": ["102kg", "heavy"]}}, "WEAR": "Alliance uniform", "SUMM": {"slogan": "I should go", "nick": ["Shep", "Shepard"]}}}]`
 </details>
 
 <details>
@@ -405,25 +410,31 @@ Since we're trying to save every last character, you shouldn't put the text like
 >
 > ```json
 > [{
-> 	"Shepard": {
-> 		"name": ["Shepard", "John", "John Shepard"], 
-> 		"age": "30y", 
-> 		"gender": "male", 
-> 		"species": ["human", "man"], 
+> 	"John Shepard": {
+> 		"DESC": ["military", "serves Alliance", "first human Spectre", "commander", "captain of Normandy"],
+> 		"age": "30",
+> 		"gender": "male",
+> 		"species": ["human", "man"],
+> 		"MIND": ["serious and heroic", "just"],
 > 		"APPEAR": {
 > 			"eyes": {
 > 				"eye_color": "brown"
 > 			},
 > 			"hair": {
-> 				"hair_color": "dark brown", 
-> 				"hair_length": ["short", "shaved"], 
-> 				"hair_style": "military haircut"
+> 				"hair_color": "dark",
+> 				"hair_length": ["short", "shaved"],
+> 				"hair_style": "Buzz Cut"
 > 			},
 > 			"body": {
-> 				"physique": ["muscular", "hunk"], 
-> 				"height": "tall_189cm", 
-> 				"weight": "average_102.5kg"
+> 				"physique": ["muscular", "hunk"],
+> 				"height": ["189cm", "tall"],
+> 				"weight": ["102kg", "heavy"]
 > 			}
+> 		},
+> 		"WEAR": "Alliance uniform",
+> 		"SUMM": {
+> 			"slogan": "I should go",
+> 			"nick": ["Shep", "Shepard"]
 > 		}
 > 	}
 > }]
@@ -433,7 +444,34 @@ Since we're trying to save every last character, you shouldn't put the text like
 Nothing to say here, it's basically JSON format as is. It's not recommended to use in WI anyway (see how much chars we waste on all those commas, extra spaces and quotes). It was tested as one of the first ones, and is here just for history... and to show what direction we're going for our entries. It's basically a pile of character keywords, hierarchically grouped into categories.
 I'm not going to explain it's syntax: if you understand it, you don't need it, and if you don't — then let's just go next.
 
-#### Zaltys
+#### Zaltys example
+<details>
+<summary>Example</summary>
+  
+> `Entry`:
+>
+> `<John Shepard>:[DESC: human male age<30> 189cm_tall 102kg_heavy; MIND: serious&heroic just; Shepard.APPE: muscular&hunk brown_eyes hair:<dark&Buzz_Cut>; WEAR: uniform:<Alliance>; Shepard.SUMM: "I should go" nick:<Shep&Shepard> first_human_spectre military serves:<Alliance> commander&captain spaceship:<Normandy>.]`
+</details>
+
+<details>
+<summary>Human-readable example</summary>
+
+> `Entry`:
+>
+> ```
+> <John Shepard>:[
+> 	DESC: human male age<30> 189cm_tall 102kg_heavy;
+> 	MIND: serious&heroic just;
+> 	Shepard.APPE: muscular&hunk brown_eyes hair:<dark&Buzz_Cut>;
+> 	WEAR: uniform:<Alliance>;
+> 	Shepard.SUMM: "I should go" nick:<Shep&Shepard> first_human_spectre military serves:<Alliance> commander&captain spaceship:<Normandy>.
+> ]
+> ```
+</details>
+
+Zaltys' format is basically stripped down JSON with a few extra tricks to further shorten the description.
+
+#### Monky's
 
 ## Last step: Scripts
 
@@ -460,3 +498,7 @@ Tools mentioned anywhere in the guide:
 triang brackets:
 * 3 meanings
 * it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
+
+Why some CATs start with `Shepard.`
+
+`prop:<val>` vs `prop<val>` = length versus accuracy (in Zaltys).
