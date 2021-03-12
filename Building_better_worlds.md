@@ -481,7 +481,7 @@ The example shows the latest of Monky's formats, which is `Futureman` (supersede
   
 > `Entry`:
 >
-> `<<John Shepard age 30 human he 189cm tall 102kg heavy>>>> <<Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>> <<Shepard serious heroic just>>>> <<Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>> <<Shepard wear Alliance uniform>>>>`
+> `<< John Shepard age 30 human he 189cm tall 102kg heavy>>>> << Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>> << Shepard serious heroic just>>>> << Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>> << Shepard wear Alliance uniform>>>>`
 </details>
 
 <details>
@@ -490,11 +490,11 @@ The example shows the latest of Monky's formats, which is `Futureman` (supersede
 > `Entry`:
 >
 > ```
-> <<John Shepard age 30 human he 189cm tall 102kg heavy>>>>
-> <<Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>>
-> <<Shepard serious heroic just>>>>
-> <<Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>>
-> <<Shepard wear Alliance uniform>>>>
+> << John Shepard age 30 human he 189cm tall 102kg heavy>>>>
+> << Shepard first human Spectre, military, Alliance, commander captain Normandy spaceship>>>>
+> << Shepard serious heroic just>>>>
+> << Shepard muscular hunk, brown eyes, short dark hair buzz cut>>>>
+> << Shepard wear Alliance uniform>>>>
 > ```
 </details>
 
