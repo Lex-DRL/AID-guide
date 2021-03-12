@@ -41,7 +41,7 @@ An introductory guide for game masters / somewhat experienced players who want t
 </details>
 
 #### Who the guide is for
-By no means this guide is a comprehensive research on the subject of Machine-Learning (ML) techniques in AID. If you're one of those data scientists / ML enthusiasts, skip it entirely and go directly to [AID WI Research Sheet](/AID%20WI%20Research%20Sheet.md).
+By no means this guide is a comprehensive research on the subject of Machine-Learning (ML) techniques in AID. If you're one of those data scientists / ML enthusiasts, skip it entirely and go directly to [AID WI Research Sheet](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md).
 
 This guide is for **players**, who just want to make the game's responses look less like the ones of a grandma with alzheimer.
 
@@ -101,7 +101,7 @@ To correctly understand what statement is informative **for the AI** (not for hu
 
 AI doesn't process the **words** you input. Neither it stores some IDs of these words. Nor it understands the meaning of them. Instead, as the very first step, AI parses (disassembles) your text into so-called **tokens**. Tokens are in essence just a common combinations of characters. So, for example, the word `APPEARANCE` is represented by 4 consequent tokens: `AP`, `PE`, `AR`, `ANCE`. Those tokens *(and their combinations, making words for you)* are the actual information the AI works with.
 
-Here's an example of a few common words [tested for tokens by the community](/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
+Here's an example of a few common words [tested for tokens by the community](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#tokenization---understanding-limitations-and-special-characters):
 <details>
 <summary>Screenshot</summary>
   
@@ -115,7 +115,7 @@ So, back to the track. You can make an entry which have many **characters** but 
 
 That's the main goals that all the techniques in this guide are focused on.
 
-Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory is shared between different parts can be found [here](/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three points:
+Another important thing about AI memory is it's size. With each input you give, only about 2.8k characters are fed to the NN. It might seem a lot, but if you consider that this limit is shared between **EVERYTHING** you send to the NN, that's not so much. That "everything" includes your `Remember` section, any relevant WI that AI found for the given input, the input itself and, well, some part of history to work with. The specifics on how exactly this memory is shared between different parts can be found [here](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#remember-worldinfo-authorsnotes-worlds-and-how-the-game-handles-them). But for now — let's mark three points:
 * The **overall** limit for `Remember` + `WI` + `Author's notes` (premium feature, but [can be used on free account with scripts](#authors-note)) + your `Input` + most recent part of story = 2772 chars. 
 * We want to use those chars as effectively as possible, trying not to waste any of them...
 * ... but at the same time feeding as much **relevant** data as we can at each input.
@@ -264,7 +264,7 @@ As [stated above](#but-im-not-a-programmer), `has` is much weaker than `is`. To 
 </details>
 
 #### Avoid negatives
-I'l just put [birb's wording](/AID%20WI%20Research%20Sheet.md#personality-keywords) here in a direct quote:
+I'l just put [birb's wording](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#personality-keywords) here in a direct quote:
 > AID has been known to be notoriously bad at negatives. For example the community has known for a long time that `White hates apples` is a better alternative to `White dislikes apples` as the AI doesn't seem to respect the intent of the latter statement at all.
 >
 > Words starting with dis- or un- rarely get respected by the AI due to tokens and how bad it's with negative prefixes. -less is a suffix that works somewhat better, but isn't recommended if you have synonyms known to be more explicit or to have unique tokens.
@@ -286,7 +286,7 @@ Vampires Attack US Troops
 Alien Bible Found, They Worship Oprah
 ```
 
-A list of words proven to be descriptive to define a character is at the same [Personality Keywords section](/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted about negatives.
+A list of words proven to be descriptive to define a character is at the same [Personality Keywords section](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#personality-keywords) I quoted about negatives.
 
 <details>
 <summary>Example</summary>
@@ -300,10 +300,10 @@ A list of words proven to be descriptive to define a character is at the same [P
 
 #### Use known categories
 Even if you won't go any further to specific formatting styles, you can (and should) utilize the keywords proven to give good results.
-The list is really long and gets updated so I won't duplicate it here and I'll just give a [link to the table of common categories](/AID%20WI%20Research%20Sheet.md#categories-table).
+The list is really long and gets updated so I won't duplicate it here and I'll just give a [link to the table of common categories](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#categories-table).
 
 Some of the most noteable are: `SUMMARY`, `MIND`, `APPEAR`, `WORN`, `DESC`, `LIMIT/LACK`. You can read about them at the link above.
-Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it's a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences [here](/AID%20WI%20Research%20Sheet.md#useful-categories). But if you just want the "recommended" approach for beginners, it's definitely `UPPERCASE`.
+Note that all of them are in `UPPERCASE`. That's not by accident. Generally, it's a matter of preference whether you use `UPPERCASE`, `lowercase` or `ProperCase` (aka `CamelCase`). Again, read about differences [here](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#useful-categories). But if you just want the "recommended" approach for beginners, it's definitely `UPPERCASE`.
 <details>
 <summary>Example</summary>
   
@@ -320,7 +320,7 @@ Note #1: the above example shows the use of special phrases like `189cm` (no spa
 
 Note #2: the AI has shown that it correctly detects shortened keywords, like `APPE` and `SUMM`. Use those to reduce both chars and tokens count.
 
-Note #3: the underscore (`_`) character [is treated by the AI specially](/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understands better that you mean specifically **hair** color: not just some arbitrary color.<br>
+Note #3: the underscore (`_`) character [is treated by the AI specially](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#on-certain-characters). It connects adjacent words stronger (harder-better-faster... 😄) than a space. So for some sub-categories it's better to use names like `hair_color` instead of `hair color` or even just `color`. This way the AI understands better that you mean specifically **hair** color: not just some arbitrary color.<br>
 Earlier, a dash (`-`) char did the same thing, but currently it's treated more like a mathematical minus, so if you see a recipe using dash to connect words, replace it with underscore instead. 
 
 #### Numbers and units
@@ -358,9 +358,9 @@ That's what AID community discovered from practice, confirmed with a plenty of t
 That's where the main WI formats emerged from. The few most used ones are called `JSON Formatting` (named after the actual JSON file format), `Zaltys Formatting` (named after the discord community member, `Zaltys`, who invented it) and a few formats designed by Monky: `Caveman` which evolved to `Neanderthal` which in turn evolved to `Futureman`.
 
 ### A couple of notes relevant for all formats
-* All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](/AID%20WI%20Research%20Sheet.md#categories-table).
+* All of them use forementioned [categories](#use-known-categories), the up-to-date [table of which can be found here](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#categories-table).
 * Also, as stated above, sub-category name like `hair_color` is better than `hair color`.
-* Grouping with `<>` [is better](/AID%20WI%20Research%20Sheet.md#birb-research) than `()`.
+* Grouping with `<>` [is better](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#birb-research) than `()`.
 * New line is a very strong (good) way to separate groups/traits. Though, each new line takes 2 characters.
 
 ### Author's note
@@ -376,10 +376,10 @@ Or even a shortened one, saving on characters (also utilizes JSON formatting):
 
 Doing so manually would be tedious, but with addition of scripts feature (which became available for free, too) it can be automated.
 
-Read more about it here: [Authors Notes specifics](/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
+Read more about it here: [Authors Notes specifics](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#authors-notes-specifics).
 
 ### The best format atm
-The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by `birb`, in the [World Info and Formatting](/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
+The in-depth comparison of those formats is also in the colossal "AI Dungeon World Info Research and Reference" by `birb`, in the [World Info and Formatting](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#world-info-and-formatting) section.
 
 Some of the statements in that guide contradict each other, so some info must be outdated. What I got told in the AID discord server is:
 * `JSON` is discouraged because of how wasteful it is, requiring too much boilerplate code.
@@ -503,7 +503,7 @@ No, it's not a typo: each statement in Futureman starts with **two** `<` chars a
 
 This guide is written by [Lex (DRL) Darlog](https://github.com/Lex-DRL).
 
-As referred multiple times along the guide, a big part of it is a simplified/revisited [AI Dungeon World Info Research and Reference](/AID%20WI%20Research%20Sheet.md) made by `birb` and other people who helped him, see his own [credits section](/AID%20WI%20Research%20Sheet.md#ending-notes).
+As referred multiple times along the guide, a big part of it is a simplified/revisited [AI Dungeon World Info Research and Reference](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md) made by `birb` and other people who helped him, see his own [credits section](https://github.com/valahraban/AID-World-Info-research-sheet/blob/main/AID%20WI%20Research%20Sheet.md#ending-notes).
 
 Another big source of it is... just answers of people, active users on the [official AID discord server](https://discord.com/invite/JpgsTF3). Massive thanks to `Mr.Accountant 🐧#3984`, who has shown an incredible patience answering all my questions as I was putting scattered bits and pieces of the subject together. Also thanks to `Zalty's 🐍#5362`, `Monky#6421`, the same `birb` (`Belverk#8526`) and `Onyx#0489`.
 
