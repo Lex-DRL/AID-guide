@@ -37,6 +37,9 @@ An introductory guide for game masters / somewhat experienced players who want t
   * [Author's note](#authors-note)
   * [The best format atm](#the-best-format-atm)
   * [Format examples](#format-examples)
+  * [Formats explained](#formats-explained)
+    + [Zaltys](#zaltys)
+    + [Monky's](#monkys)
  - [Last step: Scripts](#last-step-scripts)
 </details>
 
@@ -497,6 +500,12 @@ The example shows the latest of Monky's formats, which is `Futureman` (supersede
 
 No, it's not a typo: each statement in Futureman starts with **two** `<` chars and ends with **four** `>` chars.
 
+### Formats explained
+
+#### Zaltys
+
+#### Monky's
+
 ## Last step: Scripts
 
 ## Credits and links
@@ -507,7 +516,7 @@ As referred multiple times along the guide, a big part of it is a simplified/rev
 
 Another big source of it is... just answers of people, active users on the [official AID discord server](https://discord.com/invite/JpgsTF3). Massive thanks to `Mr.Accountant 🐧#3984`, who has shown an incredible patience answering all my questions as I was putting scattered bits and pieces of the subject together. Also thanks to `Zalty's 🐍#5362`, `Monky#6421`, the same `birb` (`Belverk#8526`) and `Onyx#0489`.
 
-Other sources used, in no particular orer:
+Other sources used, in no particular order:
 * [AID community wiki](https://wiki.aidiscord.cc/)
 
 Tools mentioned anywhere in the guide:
@@ -519,6 +528,7 @@ Tools mentioned anywhere in the guide:
 
 ## TODO:
 `you` keyword
+
 triang brackets:
 * 3 meanings
 * it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
@@ -526,3 +536,7 @@ triang brackets:
 Why some CATs start with `Shepard.`
 
 `prop:<val>` vs `prop<val>` = length versus accuracy (in Zaltys).
+
+In Futureman, try `<< Shepard` (with space) instead of `<<Shepard`: it might tokenize better (former takes just one token).
+
+If possible, try making such keywords that tokenize to a single token, especially in Griffin.
