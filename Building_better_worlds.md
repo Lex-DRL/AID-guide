@@ -518,6 +518,8 @@ No, it's not a typo: each statement in Futureman starts with **two** `<` chars a
 
 ## Last step: Scripts
 
+### TODO
+
 ## Credits and links
 
 This guide is written by [Lex (DRL) Darlog](https://github.com/Lex-DRL).
@@ -533,20 +535,3 @@ Tools mentioned anywhere in the guide:
 * [Text-to-Token Converter](https://play.aidungeon.io/main/scenarioView?publicId=6927d610-34b7-11eb-b8e1-c185d026672d) test scenario by `kim`
 * Pre-made [OK AID](https://play.aidungeon.io/main/scenarioView?publicId=2df83170-79f9-11eb-b24f-11a7b21bf4b7) test scenario.
 * [AI Dungeon World Info Builder](https://github.com/gimzani/ai-dungeon-worldbuilder) standalone program providing a **MUCH** better UI for world building *(it's an `electron` app: effectively, a web-app with bundled mini-browser)*. If the author (`gimzani`) haven't released a pre-built app, you can find it in this [`Lex-DRL`'s fork](https://github.com/Lex-DRL/ai-dungeon-worldbuilder/releases) 
-
-
-
-## TODO:
-`you` keyword
-
-triang brackets:
-* 3 meanings
-* it's not **a** citadel (a fortress of some medieval king), it's **THE** Citadel (a massive space station).
-
-Why some CATs start with `Shepard.`
-
-`prop:<val>` vs `prop<val>` = length versus accuracy (in Zaltys).
-
-In Futureman, try `<< Shepard` (with space) instead of `<<Shepard`: it might tokenize better (former takes just one token).
-
-If possible, try making such keywords that tokenize to a single token, especially in Griffin.
