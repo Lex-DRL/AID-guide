@@ -68,6 +68,16 @@ Also, before you continue, I strongly suggest reading [World Info guide on the c
 - WI - World Info
 </details>
 
+Even if you won't read any further, **I strongly recommend** to start using [AI Dungeon World Info Builder](https://github.com/gimzani/ai-dungeon-worldbuilder) app by [gimzani](https://github.com/gimzani). The tool is great, it replaces a barely usable AID's WI UI with a really user-friendly one. Give it a try right now!<br />
+Currently, gimzani has a [windows installer](https://github.com/gimzani/ai-dungeon-worldbuilder/tree/main/installer) published, but the install itself is a bit overkill, since the app is portable.<br />
+Alternatively, you can download [the build from my fork](https://github.com/Lex-DRL/ai-dungeon-worldbuilder/releases) which is portable and has a few modifications for nicer dark theme (see the release info).
+
+<details>
+<summary>Screenshot of the forked version</summary>
+  
+![AID WB screenshot](https://user-images.githubusercontent.com/3897975/111216008-e8d14a80-85e4-11eb-803a-12facf60ead5.png "AID WB screenshot")
+</details> 
+
 ## Introduction
 If you've got here, I believe you've already played [AI Dungeon (AID)](https://play.aidungeon.io/) and tried to describe your own setting with [World Info (WI)](https://wiki.aidiscord.cc/wiki/World_Info). So you've noticed a few limitations of the AI. Specifically, you must've been frustrated by how much the AI seems to forget everything, even the most recent info. I mean, it's right there, literally at the same screen, how could it possibly forget it already! You must've faced a similar situation more than once.
 
